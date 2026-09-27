@@ -1,0 +1,1322 @@
+{
+  "title": "Steward: earned authority",
+  "outro": "Earned, not given.",
+  "beats": [
+    {
+      "scene": "1",
+      "narration": "AI agents are starting to move real money.",
+      "transition": "cut",
+      "elements": [
+        {
+          "id": "agent",
+          "kind": "box",
+          "at": "agents",
+          "x": 1.2,
+          "y": 2.4,
+          "w": 4.4,
+          "h": 1.4,
+          "label": "AI agent",
+          "sub": "manages deposits",
+          "icon": "cpu",
+          "tone": "plain"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "1",
+      "narration": "Picture one that manages deposits into a tokenized real-world asset vault.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "vault",
+          "kind": "box",
+          "at": "vault",
+          "x": 10.4,
+          "y": 2.4,
+          "w": 4.6,
+          "h": 1.4,
+          "label": "RWA vault",
+          "sub": "tokenized real-world assets",
+          "icon": "database",
+          "tone": "accent"
+        },
+        {
+          "id": "move",
+          "kind": "arrow",
+          "at": "deposits",
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "from": "agent",
+          "to": "vault",
+          "label": "deposit",
+          "dashed": false,
+          "flow": true
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "1",
+      "narration": "It can propose a deposit... but can it prove what it was allowed to do?",
+      "transition": "",
+      "elements": [
+        {
+          "id": "q",
+          "kind": "heading",
+          "at": "prove",
+          "x": 2.4,
+          "y": 5,
+          "w": 11.2,
+          "h": 1.5,
+          "text": "What was it *allowed* to do?"
+        }
+      ],
+      "actions": [
+        {
+          "do": "pulse",
+          "at": "allowed",
+          "target": [
+            "agent"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "2",
+      "narration": "That's the question Steward answers, built around IXS Finance's managed vault on BNB Chain.",
+      "transition": "push",
+      "elements": [
+        {
+          "id": "title",
+          "kind": "heading",
+          "at": "steward",
+          "x": 0.9,
+          "y": 1.5,
+          "w": 8,
+          "h": 1.4,
+          "text": "*Steward*"
+        },
+        {
+          "id": "ixs",
+          "kind": "box",
+          "at": "vault",
+          "x": 10.2,
+          "y": 1.6,
+          "w": 4.9,
+          "h": 1.4,
+          "label": "IXS ManagedVault",
+          "sub": "BNB Chain",
+          "icon": "database",
+          "tone": "accent"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "2",
+      "narration": "The model can only propose a typed action: deposit, redeem, or hold.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "model",
+          "kind": "box",
+          "at": "model",
+          "x": 0.9,
+          "y": 3.9,
+          "w": 4.2,
+          "h": 1.4,
+          "label": "Model",
+          "sub": "typed proposals only",
+          "icon": "cpu",
+          "tone": "plain"
+        },
+        {
+          "id": "d",
+          "kind": "chip",
+          "at": "deposit",
+          "x": 5.8,
+          "y": 3.6,
+          "w": 2.4,
+          "h": 0.62,
+          "text": "deposit",
+          "tone": "soft"
+        },
+        {
+          "id": "r",
+          "kind": "chip",
+          "at": "redeem",
+          "x": 5.8,
+          "y": 4.4,
+          "w": 2.4,
+          "h": 0.62,
+          "text": "redeem",
+          "tone": "soft"
+        },
+        {
+          "id": "h",
+          "kind": "chip",
+          "at": "hold",
+          "x": 5.8,
+          "y": 5.2,
+          "w": 2.4,
+          "h": 0.62,
+          "text": "hold",
+          "tone": "soft"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "2",
+      "narration": "It never gets a way to name an address, write calldata, or raise a limit.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "n1",
+          "kind": "chip",
+          "at": "address",
+          "x": 9.6,
+          "y": 3.6,
+          "w": 5.4,
+          "h": 0.62,
+          "text": "name an address",
+          "tone": "ghost"
+        },
+        {
+          "id": "n2",
+          "kind": "chip",
+          "at": "calldata",
+          "x": 9.6,
+          "y": 4.4,
+          "w": 5.4,
+          "h": 0.62,
+          "text": "write calldata",
+          "tone": "ghost"
+        },
+        {
+          "id": "n3",
+          "kind": "chip",
+          "at": "limit",
+          "x": 9.6,
+          "y": 5.2,
+          "w": 5.4,
+          "h": 0.62,
+          "text": "raise a limit",
+          "tone": "ghost"
+        }
+      ],
+      "actions": [
+        {
+          "do": "cross",
+          "at": "address",
+          "target": [
+            "n1"
+          ]
+        },
+        {
+          "do": "cross",
+          "at": "calldata",
+          "target": [
+            "n2"
+          ]
+        },
+        {
+          "do": "cross",
+          "at": "limit",
+          "target": [
+            "n3"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "3",
+      "narration": "Every proposal goes to a deterministic policy engine, not the model.",
+      "transition": "slide",
+      "elements": [
+        {
+          "id": "prop",
+          "kind": "box",
+          "at": "proposal",
+          "x": 0.9,
+          "y": 2.2,
+          "w": 4,
+          "h": 1.4,
+          "label": "Proposal",
+          "sub": "from the model",
+          "icon": "file",
+          "tone": "plain"
+        },
+        {
+          "id": "eng",
+          "kind": "box",
+          "at": "engine",
+          "x": 5.8,
+          "y": 2.2,
+          "w": 4.8,
+          "h": 1.4,
+          "label": "Policy engine",
+          "sub": "deterministic",
+          "icon": "shield",
+          "tone": "accent"
+        },
+        {
+          "id": "p1",
+          "kind": "arrow",
+          "at": "goes",
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "from": "prop",
+          "to": "eng",
+          "label": "",
+          "dashed": false,
+          "flow": true
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "3",
+      "narration": "It checks the owner's mandate, the account's capacity, the vault's liquidity and fresh evidence,",
+      "transition": "",
+      "elements": [
+        {
+          "id": "checks",
+          "kind": "list",
+          "at": "checks",
+          "x": 5.8,
+          "y": 4.1,
+          "w": 4.8,
+          "h": 2.5,
+          "items": [
+            "the owner's mandate",
+            "the account's capacity",
+            "the vault's liquidity",
+            "fresh evidence"
+          ]
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "3",
+      "narration": "then answers allow or refuse, with a reason code for every check.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "verdict",
+          "kind": "chip",
+          "at": "allow",
+          "x": 11.3,
+          "y": 2.55,
+          "w": 3.8,
+          "h": 0.7,
+          "text": "ALLOW / REFUSE",
+          "tone": "soft"
+        },
+        {
+          "id": "p2",
+          "kind": "arrow",
+          "at": "answers",
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "from": "eng",
+          "to": "verdict",
+          "label": "",
+          "dashed": false,
+          "flow": false
+        },
+        {
+          "id": "codes",
+          "kind": "list",
+          "at": "reason",
+          "x": 11.3,
+          "y": 3.7,
+          "w": 3.8,
+          "h": 1.9,
+          "items": [
+            "OVER_MAX_TX",
+            "STALE_EVIDENCE",
+            "OWNER_PAUSED"
+          ]
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "3",
+      "narration": "The same engine runs in TypeScript and in Python, and the contract enforces it on chain.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "ts",
+          "kind": "chip",
+          "at": "typescript",
+          "x": 0.9,
+          "y": 7.3,
+          "w": 3,
+          "h": 0.65,
+          "text": "TypeScript",
+          "tone": "soft"
+        },
+        {
+          "id": "py",
+          "kind": "chip",
+          "at": "python",
+          "x": 4.2,
+          "y": 7.3,
+          "w": 2.4,
+          "h": 0.65,
+          "text": "Python",
+          "tone": "soft"
+        },
+        {
+          "id": "sol",
+          "kind": "chip",
+          "at": "chain",
+          "x": 6.9,
+          "y": 7.3,
+          "w": 4.2,
+          "h": 0.65,
+          "text": "Solidity, on chain",
+          "tone": "accent"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "4",
+      "narration": "Every action that changes state is bound to a receipt:",
+      "transition": "zoom",
+      "elements": [
+        {
+          "id": "sc",
+          "kind": "box",
+          "at": "action",
+          "x": 1,
+          "y": 2.4,
+          "w": 4.8,
+          "h": 1.4,
+          "label": "State change",
+          "sub": "deposit, redeem, graduate",
+          "icon": "bolt",
+          "tone": "plain"
+        },
+        {
+          "id": "rc",
+          "kind": "box",
+          "at": "receipt",
+          "x": 9.8,
+          "y": 2.4,
+          "w": 5,
+          "h": 1.4,
+          "label": "Receipt",
+          "sub": "bound to the action",
+          "icon": "file",
+          "tone": "accent"
+        },
+        {
+          "id": "rb",
+          "kind": "arrow",
+          "at": "bound",
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "from": "sc",
+          "to": "rc",
+          "label": "",
+          "dashed": false,
+          "flow": false
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "4",
+      "narration": "a sequence number, and a hash of the policy inputs behind it.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "seq",
+          "kind": "chip",
+          "at": "sequence",
+          "x": 9.8,
+          "y": 4.3,
+          "w": 5,
+          "h": 0.65,
+          "text": "sequence number",
+          "tone": "soft"
+        },
+        {
+          "id": "hash",
+          "kind": "chip",
+          "at": "hash",
+          "x": 9.8,
+          "y": 5.2,
+          "w": 5,
+          "h": 0.65,
+          "text": "policy-input hash",
+          "tone": "soft"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "4",
+      "narration": "No receipt? The action reverts.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "rev",
+          "kind": "stamp",
+          "at": "reverts",
+          "x": 1.6,
+          "y": 4.6,
+          "w": 3.6,
+          "h": 1,
+          "text": "reverts",
+          "tone": "bad"
+        }
+      ],
+      "actions": [
+        {
+          "do": "cross",
+          "at": "reverts",
+          "target": [
+            "sc"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "5",
+      "narration": "And the limits aren't typed in by an owner. They're tiers, and the agent earns them.",
+      "transition": "push",
+      "elements": [
+        {
+          "id": "lh",
+          "kind": "heading",
+          "at": "tiers",
+          "x": 0.9,
+          "y": 1.4,
+          "w": 9.5,
+          "h": 1.3,
+          "text": "Limits are *earned*"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "5",
+      "narration": "A new agent starts on probation, at a hundred and twenty per deposit.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "tiers",
+          "kind": "table",
+          "at": "probation",
+          "x": 0.9,
+          "y": 3.1,
+          "w": 7.6,
+          "h": 3.8,
+          "columns": [
+            "tier",
+            "name",
+            "max per deposit"
+          ],
+          "rows": [
+            [
+              "T0",
+              "Probation",
+              "120"
+            ],
+            [
+              "T1",
+              "Trusted",
+              "300"
+            ],
+            [
+              "T2",
+              "Established",
+              "600"
+            ],
+            [
+              "T3",
+              "Proven",
+              "1000"
+            ]
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "do": "highlight",
+          "at": "hundred",
+          "target": [
+            "tiers"
+          ],
+          "rows": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "5",
+      "narration": "To move up, it has to serve its time, carry real risk and use its authority,",
+      "transition": "",
+      "elements": [
+        {
+          "id": "conds",
+          "kind": "list",
+          "at": "move",
+          "x": 9.2,
+          "y": 3.1,
+          "w": 5.9,
+          "h": 3.3,
+          "items": [
+            "time served in the tier",
+            "real risk carried",
+            "authority actually used",
+            "enough receipts",
+            "no incidents"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "do": "highlight",
+          "at": "move",
+          "target": [
+            "tiers"
+          ],
+          "rows": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "5",
+      "narration": "collect enough receipts, and cause no incidents along the way.",
+      "transition": "",
+      "elements": [],
+      "actions": [
+        {
+          "do": "pulse",
+          "at": "incidents",
+          "target": [
+            "conds"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "5",
+      "narration": "Break the rules, and it drops back down.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "inc",
+          "kind": "chip",
+          "at": "drops",
+          "x": 9.2,
+          "y": 6.9,
+          "w": 5.9,
+          "h": 0.65,
+          "text": "incident: demoted",
+          "tone": "bad"
+        }
+      ],
+      "actions": [
+        {
+          "do": "highlight",
+          "at": "down",
+          "target": [
+            "tiers"
+          ],
+          "rows": [
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "6",
+      "narration": "Here's the proof. Two agents ask to deposit the same two hundred.",
+      "transition": "zoom",
+      "elements": [
+        {
+          "id": "b",
+          "kind": "box",
+          "at": "two",
+          "x": 1.2,
+          "y": 2.1,
+          "w": 5.4,
+          "h": 1.4,
+          "label": "Agent B",
+          "sub": "brand new, tier T0",
+          "icon": "user",
+          "tone": "plain"
+        },
+        {
+          "id": "a",
+          "kind": "box",
+          "at": "agents",
+          "x": 9.6,
+          "y": 2.1,
+          "w": 5.4,
+          "h": 1.4,
+          "label": "Agent A",
+          "sub": "graduated, tier T1",
+          "icon": "user",
+          "tone": "plain"
+        },
+        {
+          "id": "db",
+          "kind": "chip",
+          "at": "deposit",
+          "x": 1.2,
+          "y": 3.9,
+          "w": 2.8,
+          "h": 0.65,
+          "text": "deposit 200",
+          "tone": "soft"
+        },
+        {
+          "id": "da",
+          "kind": "chip",
+          "at": "same",
+          "x": 9.6,
+          "y": 3.9,
+          "w": 2.8,
+          "h": 0.65,
+          "text": "deposit 200",
+          "tone": "soft"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "6",
+      "narration": "Agent B is brand new. The contract refuses it: over max transaction.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "cap",
+          "kind": "chip",
+          "at": "brand",
+          "x": 4.3,
+          "y": 3.9,
+          "w": 2.3,
+          "h": 0.65,
+          "text": "cap 120",
+          "tone": "ghost"
+        },
+        {
+          "id": "fail",
+          "kind": "stamp",
+          "at": "refuses",
+          "x": 1.5,
+          "y": 5,
+          "w": 3.8,
+          "h": 1,
+          "text": "OverMaxTx",
+          "tone": "bad"
+        },
+        {
+          "id": "txb",
+          "kind": "text",
+          "at": "transaction",
+          "x": 1.2,
+          "y": 6.4,
+          "w": 5.4,
+          "h": 0.5,
+          "text": "tx 0x9a8c2923…1492a8c",
+          "size": "s",
+          "tone": "muted",
+          "mono": true
+        }
+      ],
+      "actions": [
+        {
+          "do": "cross",
+          "at": "refuses",
+          "target": [
+            "b"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "6",
+      "narration": "Agent A built its record and graduated to tier one... the same two hundred goes through.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "up",
+          "kind": "chip",
+          "at": "graduated",
+          "x": 12.7,
+          "y": 3.9,
+          "w": 2.3,
+          "h": 0.65,
+          "text": "T0 → T1",
+          "tone": "accent"
+        },
+        {
+          "id": "ok",
+          "kind": "stamp",
+          "at": "goes",
+          "x": 9.9,
+          "y": 5,
+          "w": 3.6,
+          "h": 1,
+          "text": "success",
+          "tone": "ok"
+        },
+        {
+          "id": "txa",
+          "kind": "text",
+          "at": "through",
+          "x": 9.6,
+          "y": 6.4,
+          "w": 5.4,
+          "h": 0.5,
+          "text": "tx 0x68c77863…1467885",
+          "size": "s",
+          "tone": "muted",
+          "mono": true
+        }
+      ],
+      "actions": [
+        {
+          "do": "check",
+          "at": "through",
+          "target": [
+            "a"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "6",
+      "narration": "Anyone can check both transactions on the BNB Chain testnet explorer.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "scan",
+          "kind": "chip",
+          "at": "explorer",
+          "x": 4.6,
+          "y": 7.4,
+          "w": 6.8,
+          "h": 0.65,
+          "text": "testnet.bscscan.com",
+          "tone": "accent"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "7",
+      "narration": "The hosted demo walks through the same story, step by step,",
+      "transition": "slide",
+      "elements": [
+        {
+          "id": "walk",
+          "kind": "video",
+          "at": "hosted",
+          "x": 2,
+          "y": 1.05,
+          "w": 12,
+          "h": 7.5,
+          "src": "walkthrough",
+          "fit": "cover",
+          "from": 0,
+          "rate": 1
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "7",
+      "narration": "from the stranger turned away to the earned agent's deposit.",
+      "transition": "",
+      "elements": [],
+      "actions": []
+    },
+    {
+      "scene": "8",
+      "narration": "In the simulator, the real engine runs right in your browser.",
+      "transition": "push",
+      "elements": [
+        {
+          "id": "sim",
+          "kind": "video",
+          "at": "simulator",
+          "x": 2,
+          "y": 1.05,
+          "w": 12,
+          "h": 7.5,
+          "src": "slider",
+          "fit": "cover",
+          "from": 0,
+          "rate": 1,
+          "sync": {
+            "word": "flips",
+            "mark": 0
+          }
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "8",
+      "narration": "Drag the deposit past what the tier allows, and the verdict flips to refuse.",
+      "transition": "",
+      "elements": [],
+      "actions": []
+    },
+    {
+      "scene": "9",
+      "narration": "The attack lab fires one attack per click.",
+      "transition": "cut",
+      "elements": [
+        {
+          "id": "lab",
+          "kind": "video",
+          "at": "attack",
+          "x": 2,
+          "y": 1.05,
+          "w": 12,
+          "h": 7.5,
+          "src": "attack",
+          "fit": "cover",
+          "from": 0,
+          "rate": 1,
+          "sync": {
+            "word": "refused",
+            "mark": 0
+          },
+          "syncEnd": {
+            "word": "pauses",
+            "mark": 2
+          }
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "9",
+      "narration": "Stale evidence? Refused, with its reason.",
+      "transition": "",
+      "elements": [],
+      "actions": []
+    },
+    {
+      "scene": "9",
+      "narration": "Two sources agreeing on bad news? Capacity drops to zero.",
+      "transition": "",
+      "elements": [],
+      "actions": []
+    },
+    {
+      "scene": "9",
+      "narration": "The owner pauses the account? Every deposit stops.",
+      "transition": "",
+      "elements": [],
+      "actions": []
+    },
+    {
+      "scene": "10",
+      "narration": "The live account page reads everything from the chain: capacity, headroom, the mandate.",
+      "transition": "slide",
+      "elements": [
+        {
+          "id": "acct",
+          "kind": "video",
+          "at": "live",
+          "x": 2,
+          "y": 1.05,
+          "w": 12,
+          "h": 7.5,
+          "src": "account",
+          "fit": "cover",
+          "from": 0,
+          "rate": 1,
+          "sync": {
+            "word": "shows",
+            "mark": 0
+          },
+          "syncEnd": {
+            "word": "sent",
+            "mark": 1
+          }
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "10",
+      "narration": "Its pre-flight check shows what the engine would say, before anything is sent,",
+      "transition": "",
+      "elements": [],
+      "actions": []
+    },
+    {
+      "scene": "10",
+      "narration": "and the decision feed lists every receipt, graduation included.",
+      "transition": "",
+      "elements": [],
+      "actions": []
+    },
+    {
+      "scene": "11",
+      "narration": "Don't trust it. Replay it.",
+      "transition": "push",
+      "elements": [
+        {
+          "id": "ver",
+          "kind": "video",
+          "at": "trust",
+          "x": 2,
+          "y": 1.05,
+          "w": 12,
+          "h": 7.5,
+          "src": "verify",
+          "fit": "cover",
+          "from": 0,
+          "rate": 1,
+          "sync": {
+            "word": "replay",
+            "mark": 0
+          }
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "11",
+      "narration": "The verifier replays the agent's whole history with the same engine... and agrees with the chain.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "ring",
+          "kind": "box",
+          "at": "replays",
+          "x": 8.85,
+          "y": 2.8,
+          "w": 3.35,
+          "h": 2.8,
+          "label": "",
+          "sub": "",
+          "icon": "none",
+          "tone": "ghost"
+        }
+      ],
+      "actions": [
+        {
+          "do": "focus",
+          "at": "replays",
+          "target": [
+            "ring"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "12",
+      "narration": "It's tested hard: eighty-nine contract tests pass,",
+      "transition": "zoom",
+      "elements": [
+        {
+          "id": "n89",
+          "kind": "number",
+          "at": "eightynine",
+          "x": 0.9,
+          "y": 2,
+          "w": 4.3,
+          "h": 2.1,
+          "value": 89,
+          "prefix": "",
+          "suffix": "",
+          "label": "contract tests passing"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "12",
+      "narration": "and in all a hundred and forty-four shared cases, the TypeScript and Python engines agree exactly.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "n144",
+          "kind": "number",
+          "at": "fortyfour",
+          "x": 5.9,
+          "y": 2,
+          "w": 4.3,
+          "h": 2.1,
+          "value": 144,
+          "prefix": "",
+          "suffix": "",
+          "label": "cases: both engines agree"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "12",
+      "narration": "Thirty live calls to a real model tried ten kinds of attack.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "n30",
+          "kind": "number",
+          "at": "thirty",
+          "x": 10.8,
+          "y": 2,
+          "w": 4.3,
+          "h": 2.1,
+          "value": 30,
+          "prefix": "",
+          "suffix": "",
+          "label": "live calls to a real model"
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "12",
+      "narration": "Not one unsafe action got past validation.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "n0",
+          "kind": "number",
+          "at": "unsafe",
+          "x": 5.4,
+          "y": 5,
+          "w": 5.2,
+          "h": 2.4,
+          "value": 0,
+          "prefix": "",
+          "suffix": "%",
+          "label": "unsafe actions got through"
+        }
+      ],
+      "actions": [
+        {
+          "do": "pulse",
+          "at": "validation",
+          "target": [
+            "n0"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "13",
+      "narration": "Steward even measures the vault itself: how long redemptions really take,",
+      "transition": "slide",
+      "elements": [
+        {
+          "id": "hf",
+          "kind": "box",
+          "at": "measures",
+          "x": 0.9,
+          "y": 2.2,
+          "w": 5.6,
+          "h": 1.5,
+          "label": "Vault Health Feed",
+          "sub": "measured redemption times",
+          "icon": "clock",
+          "tone": "accent"
+        },
+        {
+          "id": "lat",
+          "kind": "table",
+          "at": "redemptions",
+          "x": 7.4,
+          "y": 2.2,
+          "w": 7.6,
+          "h": 2.5,
+          "columns": [
+            "redemptions",
+            "measured"
+          ],
+          "rows": [
+            [
+              "median settle",
+              "0.26 hours"
+            ],
+            [
+              "slowest settled",
+              "12.7 days"
+            ]
+          ]
+        }
+      ],
+      "actions": []
+    },
+    {
+      "scene": "13",
+      "narration": "read from the vault's own request history, not from its documentation.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "hist",
+          "kind": "box",
+          "at": "history",
+          "x": 0.9,
+          "y": 5.3,
+          "w": 5.6,
+          "h": 1.4,
+          "label": "Request history",
+          "sub": "read from the vault",
+          "icon": "database",
+          "tone": "plain"
+        },
+        {
+          "id": "docs",
+          "kind": "chip",
+          "at": "documentation",
+          "x": 7.4,
+          "y": 5.65,
+          "w": 4.2,
+          "h": 0.7,
+          "text": "the docs' promise",
+          "tone": "ghost"
+        },
+        {
+          "id": "h1",
+          "kind": "arrow",
+          "at": "history",
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0,
+          "from": "hist",
+          "to": "hf",
+          "label": "",
+          "dashed": false,
+          "flow": true
+        }
+      ],
+      "actions": [
+        {
+          "do": "cross",
+          "at": "documentation",
+          "target": [
+            "docs"
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "14",
+      "narration": "Under the hood, graduate only passes when every condition holds.",
+      "transition": "zoom",
+      "elements": [
+        {
+          "id": "code",
+          "kind": "code",
+          "at": "graduate",
+          "x": 0.9,
+          "y": 1.5,
+          "w": 9.4,
+          "h": 4.3,
+          "title": "contracts/src/StewardAccount.sol",
+          "lines": [
+            "function graduate() external nonReentrant {",
+            "    uint16 failedMask = TierEngine.checkPromotion(",
+            "        tierState,",
+            "…",
+            "    );",
+            "    if (failedMask != 0) revert NotEligibleForGraduation();",
+            "    tierState = TierEngine.graduate(tierState, nowTs);",
+            "}"
+          ],
+          "focus": []
+        },
+        {
+          "id": "conds2",
+          "kind": "list",
+          "at": "condition",
+          "x": 10.8,
+          "y": 1.5,
+          "w": 4.4,
+          "h": 4.3,
+          "items": [
+            "time served",
+            "risk carried",
+            "authority used",
+            "receipts",
+            "no incidents"
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "do": "focus",
+          "at": "passes",
+          "target": [
+            "code"
+          ]
+        },
+        {
+          "do": "highlight",
+          "at": "holds",
+          "target": [
+            "code"
+          ],
+          "lines": [
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "scene": "14",
+      "narration": "Authority, earned... never handed over.",
+      "transition": "",
+      "elements": [
+        {
+          "id": "earned",
+          "kind": "stamp",
+          "at": "earned",
+          "x": 5.8,
+          "y": 6.4,
+          "w": 3.6,
+          "h": 1.1,
+          "text": "earned",
+          "tone": "ok"
+        }
+      ],
+      "actions": [
+        {
+          "do": "reset",
+          "at": "authority",
+          "target": []
+        }
+      ]
+    }
+  ],
+  "videos": {
+    "walkthrough": "/videos/steward/walkthrough.mp4",
+    "slider": "/videos/steward/slider.mp4",
+    "attack": "/videos/steward/attack.mp4",
+    "account": "/videos/steward/account.mp4",
+    "verify": "/videos/steward/verify.mp4"
+  }
+}

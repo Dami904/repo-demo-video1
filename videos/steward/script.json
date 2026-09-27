@@ -1,0 +1,222 @@
+{
+ "title": "Steward: earned authority",
+ "outro": "Earned, not given.",
+ "story": "AI agents are starting to move real money. Picture one that manages deposits into a tokenized real-world asset vault. It can propose a deposit... but can it prove what it was allowed to do? That's the question Steward answers, built around IXS Finance's managed vault on BNB Chain. The model can only propose a typed action: deposit, redeem, or hold. It never gets a way to name an address, write calldata, or raise a limit. Every proposal goes to a deterministic policy engine, not the model. It checks the owner's mandate, the account's capacity, the vault's liquidity and fresh evidence, then answers allow or refuse, with a reason code for every check. The same engine runs in TypeScript and in Python, and the contract enforces it on chain. Every action that changes state is bound to a receipt: a sequence number, and a hash of the policy inputs behind it. No receipt? The action reverts. And the limits aren't typed in by an owner. They're tiers, and the agent earns them. A new agent starts on probation, at a hundred and twenty per deposit. To move up, it has to serve its time, carry real risk and use its authority, collect enough receipts, and cause no incidents along the way. Break the rules, and it drops back down. Here's the proof. Two agents ask to deposit the same two hundred. Agent B is brand new. The contract refuses it: over max transaction. Agent A built its record and graduated to tier one... the same two hundred goes through. Anyone can check both transactions on the BNB Chain testnet explorer. The hosted demo walks through the same story, step by step, from the stranger turned away to the earned agent's deposit. In the simulator, the real engine runs right in your browser. Drag the deposit past what the tier allows, and the verdict flips to refuse. The attack lab fires one attack per click. Stale evidence? Refused, with its reason. Two sources agreeing on bad news? Capacity drops to zero. The owner pauses the account? Every deposit stops. The live account page reads everything from the chain: capacity, headroom, the mandate. Its pre-flight check shows what the engine would say, before anything is sent, and the decision feed lists every receipt, graduation included. Don't trust it. Replay it. The verifier replays the agent's whole history with the same engine... and agrees with the chain. It's tested hard: eighty-nine contract tests pass, and in all a hundred and forty-four shared cases, the TypeScript and Python engines agree exactly. Thirty live calls to a real model tried ten kinds of attack. Not one unsafe action got past validation. Steward even measures the vault itself: how long redemptions really take, read from the vault's own request history, not from its documentation. Under the hood, graduate only passes when every condition holds. Authority, earned... never handed over.",
+ "beats": [
+  {
+   "scene": "1",
+   "narration": "AI agents are starting to move real money.",
+   "brief": "Agent box appears."
+  },
+  {
+   "scene": "1",
+   "narration": "Picture one that manages deposits into a tokenized real-world asset vault.",
+   "brief": "Vault box on the right, a deposit arrow with packets."
+  },
+  {
+   "scene": "1",
+   "narration": "It can propose a deposit... but can it prove what it was allowed to do?",
+   "brief": "A large question below; the agent pulses."
+  },
+  {
+   "scene": "2",
+   "narration": "That's the question Steward answers, built around IXS Finance's managed vault on BNB Chain.",
+   "brief": "Steward title and the IXS ManagedVault box."
+  },
+  {
+   "scene": "2",
+   "narration": "The model can only propose a typed action: deposit, redeem, or hold.",
+   "brief": "Model box; three action chips appear on their words."
+  },
+  {
+   "scene": "2",
+   "narration": "It never gets a way to name an address, write calldata, or raise a limit.",
+   "brief": "Three forbidden chips, each crossed out on its word."
+  },
+  {
+   "scene": "3",
+   "narration": "Every proposal goes to a deterministic policy engine, not the model.",
+   "brief": "Proposal box flows into the accent policy engine box."
+  },
+  {
+   "scene": "3",
+   "narration": "It checks the owner's mandate, the account's capacity, the vault's liquidity and fresh evidence,",
+   "brief": "A checklist appears under the engine."
+  },
+  {
+   "scene": "3",
+   "narration": "then answers allow or refuse, with a reason code for every check.",
+   "brief": "ALLOW / REFUSE verdict chip and real reason codes."
+  },
+  {
+   "scene": "3",
+   "narration": "The same engine runs in TypeScript and in Python, and the contract enforces it on chain.",
+   "brief": "TypeScript, Python and Solidity chips along the bottom."
+  },
+  {
+   "scene": "4",
+   "narration": "Every action that changes state is bound to a receipt:",
+   "brief": "State change box, arrow to a receipt box."
+  },
+  {
+   "scene": "4",
+   "narration": "a sequence number, and a hash of the policy inputs behind it.",
+   "brief": "Two chips under the receipt."
+  },
+  {
+   "scene": "4",
+   "narration": "No receipt? The action reverts.",
+   "brief": "The state change is crossed; a reverts stamp."
+  },
+  {
+   "scene": "5",
+   "narration": "And the limits aren't typed in by an owner. They're tiers, and the agent earns them.",
+   "brief": "Heading: limits are earned."
+  },
+  {
+   "scene": "5",
+   "narration": "A new agent starts on probation, at a hundred and twenty per deposit.",
+   "brief": "The real tier table; T0 row lights."
+  },
+  {
+   "scene": "5",
+   "narration": "To move up, it has to serve its time, carry real risk and use its authority,",
+   "brief": "Promotion conditions list; T1 row lights."
+  },
+  {
+   "scene": "5",
+   "narration": "collect enough receipts, and cause no incidents along the way.",
+   "brief": "Conditions list pulses."
+  },
+  {
+   "scene": "5",
+   "narration": "Break the rules, and it drops back down.",
+   "brief": "An incident chip; back to T0."
+  },
+  {
+   "scene": "6",
+   "narration": "Here's the proof. Two agents ask to deposit the same two hundred.",
+   "brief": "Agent B left, Agent A right, deposit 200 chips."
+  },
+  {
+   "scene": "6",
+   "narration": "Agent B is brand new. The contract refuses it: over max transaction.",
+   "brief": "B crossed, OverMaxTx stamp, B's testnet tx."
+  },
+  {
+   "scene": "6",
+   "narration": "Agent A built its record and graduated to tier one... the same two hundred goes through.",
+   "brief": "T0 to T1 chip, A checked, success stamp, A's testnet tx."
+  },
+  {
+   "scene": "6",
+   "narration": "Anyone can check both transactions on the BNB Chain testnet explorer.",
+   "brief": "Explorer chip along the bottom."
+  },
+  {
+   "scene": "7",
+   "narration": "The hosted demo walks through the same story, step by step,",
+   "brief": "Recording of /demo."
+  },
+  {
+   "scene": "7",
+   "narration": "from the stranger turned away to the earned agent's deposit.",
+   "brief": "The walkthrough scrolls through steps 01 to 03."
+  },
+  {
+   "scene": "8",
+   "narration": "In the simulator, the real engine runs right in your browser.",
+   "brief": "Recording of /simulate."
+  },
+  {
+   "scene": "8",
+   "narration": "Drag the deposit past what the tier allows, and the verdict flips to refuse.",
+   "brief": "The slider is dragged; verdict flips to REFUSE on 'flips'."
+  },
+  {
+   "scene": "9",
+   "narration": "The attack lab fires one attack per click.",
+   "brief": "Recording of the attack lab."
+  },
+  {
+   "scene": "9",
+   "narration": "Stale evidence? Refused, with its reason.",
+   "brief": "Stale evidence click; REFUSE STALE_EVIDENCE."
+  },
+  {
+   "scene": "9",
+   "narration": "Two sources agreeing on bad news? Capacity drops to zero.",
+   "brief": "Severe adverse claim; capacity 0."
+  },
+  {
+   "scene": "9",
+   "narration": "The owner pauses the account? Every deposit stops.",
+   "brief": "Paused; REFUSE OWNER_PAUSED."
+  },
+  {
+   "scene": "10",
+   "narration": "The live account page reads everything from the chain: capacity, headroom, the mandate.",
+   "brief": "Recording of /app: the dark account panel."
+  },
+  {
+   "scene": "10",
+   "narration": "Its pre-flight check shows what the engine would say, before anything is sent,",
+   "brief": "Pre-flight: ALLOW on 'shows', REFUSE on 'sent'."
+  },
+  {
+   "scene": "10",
+   "narration": "and the decision feed lists every receipt, graduation included.",
+   "brief": "The decision feed with the graduation."
+  },
+  {
+   "scene": "11",
+   "narration": "Don't trust it. Replay it.",
+   "brief": "Recording of /verify; Verify pressed on 'replay'."
+  },
+  {
+   "scene": "11",
+   "narration": "The verifier replays the agent's whole history with the same engine... and agrees with the chain.",
+   "brief": "Dashed ring on the Checks panel, camera pushes in on AGREES."
+  },
+  {
+   "scene": "12",
+   "narration": "It's tested hard: eighty-nine contract tests pass,",
+   "brief": "Number 89."
+  },
+  {
+   "scene": "12",
+   "narration": "and in all a hundred and forty-four shared cases, the TypeScript and Python engines agree exactly.",
+   "brief": "Number 144."
+  },
+  {
+   "scene": "12",
+   "narration": "Thirty live calls to a real model tried ten kinds of attack.",
+   "brief": "Number 30."
+  },
+  {
+   "scene": "12",
+   "narration": "Not one unsafe action got past validation.",
+   "brief": "Big 0 unsafe."
+  },
+  {
+   "scene": "13",
+   "narration": "Steward even measures the vault itself: how long redemptions really take,",
+   "brief": "Vault Health Feed box and measured redemption times."
+  },
+  {
+   "scene": "13",
+   "narration": "read from the vault's own request history, not from its documentation.",
+   "brief": "A 'docs' chip crossed; history highlighted."
+  },
+  {
+   "scene": "14",
+   "narration": "Under the hood, graduate only passes when every condition holds.",
+   "brief": "The real graduate() code; the revert line lights."
+  },
+  {
+   "scene": "14",
+   "narration": "Authority, earned... never handed over.",
+   "brief": "Earned stamp; camera pulls back."
+  }
+ ]
+}

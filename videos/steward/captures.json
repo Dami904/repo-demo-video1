@@ -1,0 +1,150 @@
+{
+  "site": "https://steward-rwa.vercel.app",
+  "clips": [
+    {
+      "id": "walkthrough",
+      "path": "/demo",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ready": "Same request, earned agent",
+      "steps": [
+        {
+          "wait": 1500
+        },
+        {
+          "scrollTo": 185
+        },
+        {
+          "wait": 4500
+        }
+      ]
+    },
+    {
+      "id": "slider",
+      "path": "/simulate",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollY": 250,
+      "ready": "Attack lab",
+      "steps": [
+        {
+          "wait": 600
+        },
+        {
+          "drag": [
+            237,
+            185,
+            560,
+            185
+          ]
+        },
+        {
+          "wait": 2500
+        }
+      ]
+    },
+    {
+      "id": "attack",
+      "path": "/simulate",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollY": 250,
+      "ready": "Attack lab",
+      "steps": [
+        {
+          "wait": 600
+        },
+        {
+          "click": "::-p-text(Evidence too old)"
+        },
+        {
+          "wait": 2000
+        },
+        {
+          "click": "::-p-text(Two sources agree)"
+        },
+        {
+          "wait": 2000
+        },
+        {
+          "click": "::-p-text(paused the account)"
+        },
+        {
+          "wait": 2000
+        },
+        {
+          "click": "::-p-text(Reset to a clean)"
+        },
+        {
+          "wait": 1500
+        }
+      ]
+    },
+    {
+      "id": "account",
+      "path": "/app",
+      "viewport": [
+        1440,
+        900
+      ],
+      "scrollY": 480,
+      "ready": "Decision feed",
+      "steps": [
+        {
+          "wait": 2500
+        },
+        {
+          "scrollTo": 1250
+        },
+        {
+          "wait": 500
+        },
+        {
+          "click": "::-p-text(All remaining headroom)"
+        },
+        {
+          "wait": 1800
+        },
+        {
+          "click": "::-p-text(Everything in the treasury)"
+        },
+        {
+          "wait": 1800
+        },
+        {
+          "scrollTo": 1640
+        },
+        {
+          "wait": 2500
+        }
+      ]
+    },
+    {
+      "id": "verify",
+      "path": "/verify",
+      "viewport": [
+        1440,
+        900
+      ],
+      "ready": "AGREES",
+      "steps": [
+        {
+          "wait": 700
+        },
+        {
+          "click": "button::-p-text(Verify)"
+        },
+        {
+          "wait": 4500
+        }
+      ],
+      "scrollY": 380
+    }
+  ]
+}

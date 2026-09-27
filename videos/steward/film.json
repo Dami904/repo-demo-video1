@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "owner": "Dami904",
+    "repo": "steward",
+    "url": "https://github.com/Dami904/steward",
+    "description": "An AI agent for the IXS RWA vault that has to earn its limits: deterministic policy envelope, on-chain earned-authority tiers, and a measured Vault Health Feed.",
+    "stars": 0,
+    "language": "TypeScript"
+  },
+  "sourceFiles": [
+    "contracts/src/StewardAccount.sol",
+    "contracts/src/libraries/TierEngine.sol",
+    "spec/tiers.md"
+  ],
+  "theme": {
+    "colors": {
+      "paper": "#f6f1e7",
+      "paper2": "#efe8d8",
+      "card": "#ffffff",
+      "ink": "#26241f",
+      "ink2": "#4a453b",
+      "line": "#d3c8b3",
+      "shadow": "#e4dccb",
+      "accent": "#bcd3e6",
+      "accentSoft": "#e4eef6",
+      "accentDeep": "#2f6690",
+      "ok": "#2f8f5b",
+      "okSoft": "#e7f3ed",
+      "bad": "#a6483a",
+      "badSoft": "#fbeae6",
+      "glow": "#ffffff",
+      "termBg": "#1a1814",
+      "termText": "#f6f1e7",
+      "termDim": "#b3aa98",
+      "termLine": "#3a362e",
+      "termOk": "#7cc7a0",
+      "captionBg": "rgba(26,24,20,0.9)",
+      "captionText": "#f6f1e7",
+      "codeString": "#8a5a1c",
+      "codeNumber": "#3e7c6a"
+    },
+    "fonts": {
+      "sans": "Manrope",
+      "mono": "Geist Mono",
+      "display": "Space Grotesk"
+    },
+    "logo": "apps/web/app/icon.svg"
+  },
+  "seconds": 190
+}

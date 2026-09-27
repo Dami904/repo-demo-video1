@@ -1,0 +1,1168 @@
+{
+ "shots": [
+  {
+   "beat": 0,
+   "elements": [
+    {
+     "id": "agent",
+     "kind": "box",
+     "at": "agents",
+     "x": 1.2,
+     "y": 2.4,
+     "w": 4.4,
+     "h": 1.4,
+     "label": "AI agent",
+     "sub": "manages deposits",
+     "icon": "cpu",
+     "tone": "plain"
+    }
+   ],
+   "actions": [],
+   "transition": "cut"
+  },
+  {
+   "beat": 1,
+   "elements": [
+    {
+     "id": "vault",
+     "kind": "box",
+     "at": "vault",
+     "x": 10.4,
+     "y": 2.4,
+     "w": 4.6,
+     "h": 1.4,
+     "label": "RWA vault",
+     "sub": "tokenized real-world assets",
+     "icon": "database",
+     "tone": "accent"
+    },
+    {
+     "id": "move",
+     "kind": "arrow",
+     "at": "deposits",
+     "from": "agent",
+     "to": "vault",
+     "label": "deposit",
+     "flow": true
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 2,
+   "elements": [
+    {
+     "id": "q",
+     "kind": "heading",
+     "at": "prove",
+     "x": 2.4,
+     "y": 5.0,
+     "w": 11.2,
+     "h": 1.5,
+     "text": "What was it *allowed* to do?"
+    }
+   ],
+   "actions": [
+    {
+     "at": "allowed",
+     "do": "pulse",
+     "target": "agent"
+    }
+   ]
+  },
+  {
+   "beat": 3,
+   "elements": [
+    {
+     "id": "title",
+     "kind": "heading",
+     "at": "steward",
+     "x": 0.9,
+     "y": 1.5,
+     "w": 8,
+     "h": 1.4,
+     "text": "*Steward*"
+    },
+    {
+     "id": "ixs",
+     "kind": "box",
+     "at": "vault",
+     "x": 10.2,
+     "y": 1.6,
+     "w": 4.9,
+     "h": 1.4,
+     "label": "IXS ManagedVault",
+     "sub": "BNB Chain",
+     "icon": "database",
+     "tone": "accent"
+    }
+   ],
+   "actions": [],
+   "transition": "push"
+  },
+  {
+   "beat": 4,
+   "elements": [
+    {
+     "id": "model",
+     "kind": "box",
+     "at": "model",
+     "x": 0.9,
+     "y": 3.9,
+     "w": 4.2,
+     "h": 1.4,
+     "label": "Model",
+     "sub": "typed proposals only",
+     "icon": "cpu",
+     "tone": "plain"
+    },
+    {
+     "id": "d",
+     "kind": "chip",
+     "at": "deposit",
+     "x": 5.8,
+     "y": 3.6,
+     "w": 2.4,
+     "h": 0.62,
+     "text": "deposit",
+     "tone": "soft"
+    },
+    {
+     "id": "r",
+     "kind": "chip",
+     "at": "redeem",
+     "x": 5.8,
+     "y": 4.4,
+     "w": 2.4,
+     "h": 0.62,
+     "text": "redeem",
+     "tone": "soft"
+    },
+    {
+     "id": "h",
+     "kind": "chip",
+     "at": "hold",
+     "x": 5.8,
+     "y": 5.2,
+     "w": 2.4,
+     "h": 0.62,
+     "text": "hold",
+     "tone": "soft"
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 5,
+   "elements": [
+    {
+     "id": "n1",
+     "kind": "chip",
+     "at": "address",
+     "x": 9.6,
+     "y": 3.6,
+     "w": 5.4,
+     "h": 0.62,
+     "text": "name an address",
+     "tone": "ghost"
+    },
+    {
+     "id": "n2",
+     "kind": "chip",
+     "at": "calldata",
+     "x": 9.6,
+     "y": 4.4,
+     "w": 5.4,
+     "h": 0.62,
+     "text": "write calldata",
+     "tone": "ghost"
+    },
+    {
+     "id": "n3",
+     "kind": "chip",
+     "at": "limit",
+     "x": 9.6,
+     "y": 5.2,
+     "w": 5.4,
+     "h": 0.62,
+     "text": "raise a limit",
+     "tone": "ghost"
+    }
+   ],
+   "actions": [
+    {
+     "at": "address",
+     "do": "cross",
+     "target": "n1"
+    },
+    {
+     "at": "calldata",
+     "do": "cross",
+     "target": "n2"
+    },
+    {
+     "at": "limit",
+     "do": "cross",
+     "target": "n3"
+    }
+   ]
+  },
+  {
+   "beat": 6,
+   "elements": [
+    {
+     "id": "prop",
+     "kind": "box",
+     "at": "proposal",
+     "x": 0.9,
+     "y": 2.2,
+     "w": 4.0,
+     "h": 1.4,
+     "label": "Proposal",
+     "sub": "from the model",
+     "icon": "file",
+     "tone": "plain"
+    },
+    {
+     "id": "eng",
+     "kind": "box",
+     "at": "engine",
+     "x": 5.8,
+     "y": 2.2,
+     "w": 4.8,
+     "h": 1.4,
+     "label": "Policy engine",
+     "sub": "deterministic",
+     "icon": "shield",
+     "tone": "accent"
+    },
+    {
+     "id": "p1",
+     "kind": "arrow",
+     "at": "goes",
+     "from": "prop",
+     "to": "eng",
+     "flow": true
+    }
+   ],
+   "actions": [],
+   "transition": "slide"
+  },
+  {
+   "beat": 7,
+   "elements": [
+    {
+     "id": "checks",
+     "kind": "list",
+     "at": "checks",
+     "x": 5.8,
+     "y": 4.1,
+     "w": 4.8,
+     "h": 2.5,
+     "items": [
+      "the owner's mandate",
+      "the account's capacity",
+      "the vault's liquidity",
+      "fresh evidence"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 8,
+   "elements": [
+    {
+     "id": "verdict",
+     "kind": "chip",
+     "at": "allow",
+     "x": 11.3,
+     "y": 2.55,
+     "w": 3.8,
+     "h": 0.7,
+     "text": "ALLOW / REFUSE",
+     "tone": "soft"
+    },
+    {
+     "id": "p2",
+     "kind": "arrow",
+     "at": "answers",
+     "from": "eng",
+     "to": "verdict"
+    },
+    {
+     "id": "codes",
+     "kind": "list",
+     "at": "reason",
+     "x": 11.3,
+     "y": 3.7,
+     "w": 3.8,
+     "h": 1.9,
+     "items": [
+      "OVER_MAX_TX",
+      "STALE_EVIDENCE",
+      "OWNER_PAUSED"
+     ]
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 9,
+   "elements": [
+    {
+     "id": "ts",
+     "kind": "chip",
+     "at": "typescript",
+     "x": 0.9,
+     "y": 7.3,
+     "w": 3.0,
+     "h": 0.65,
+     "text": "TypeScript",
+     "tone": "soft"
+    },
+    {
+     "id": "py",
+     "kind": "chip",
+     "at": "python",
+     "x": 4.2,
+     "y": 7.3,
+     "w": 2.4,
+     "h": 0.65,
+     "text": "Python",
+     "tone": "soft"
+    },
+    {
+     "id": "sol",
+     "kind": "chip",
+     "at": "chain",
+     "x": 6.9,
+     "y": 7.3,
+     "w": 4.2,
+     "h": 0.65,
+     "text": "Solidity, on chain",
+     "tone": "accent"
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 10,
+   "elements": [
+    {
+     "id": "sc",
+     "kind": "box",
+     "at": "action",
+     "x": 1.0,
+     "y": 2.4,
+     "w": 4.8,
+     "h": 1.4,
+     "label": "State change",
+     "sub": "deposit, redeem, graduate",
+     "icon": "bolt",
+     "tone": "plain"
+    },
+    {
+     "id": "rc",
+     "kind": "box",
+     "at": "receipt",
+     "x": 9.8,
+     "y": 2.4,
+     "w": 5.0,
+     "h": 1.4,
+     "label": "Receipt",
+     "sub": "bound to the action",
+     "icon": "file",
+     "tone": "accent"
+    },
+    {
+     "id": "rb",
+     "kind": "arrow",
+     "at": "bound",
+     "from": "sc",
+     "to": "rc"
+    }
+   ],
+   "actions": [],
+   "transition": "zoom"
+  },
+  {
+   "beat": 11,
+   "elements": [
+    {
+     "id": "seq",
+     "kind": "chip",
+     "at": "sequence",
+     "x": 9.8,
+     "y": 4.3,
+     "w": 5.0,
+     "h": 0.65,
+     "text": "sequence number",
+     "tone": "soft"
+    },
+    {
+     "id": "hash",
+     "kind": "chip",
+     "at": "hash",
+     "x": 9.8,
+     "y": 5.2,
+     "w": 5.0,
+     "h": 0.65,
+     "text": "policy-input hash",
+     "tone": "soft"
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 12,
+   "elements": [
+    {
+     "id": "rev",
+     "kind": "stamp",
+     "at": "reverts",
+     "x": 1.6,
+     "y": 4.6,
+     "w": 3.6,
+     "h": 1.0,
+     "text": "reverts",
+     "tone": "bad"
+    }
+   ],
+   "actions": [
+    {
+     "at": "reverts",
+     "do": "cross",
+     "target": "sc"
+    }
+   ]
+  },
+  {
+   "beat": 13,
+   "elements": [
+    {
+     "id": "lh",
+     "kind": "heading",
+     "at": "tiers",
+     "x": 0.9,
+     "y": 1.4,
+     "w": 9.5,
+     "h": 1.3,
+     "text": "Limits are *earned*"
+    }
+   ],
+   "actions": [],
+   "transition": "push"
+  },
+  {
+   "beat": 14,
+   "elements": [
+    {
+     "id": "tiers",
+     "kind": "table",
+     "at": "probation",
+     "x": 0.9,
+     "y": 3.1,
+     "w": 7.6,
+     "h": 3.8,
+     "columns": [
+      "tier",
+      "name",
+      "max per deposit"
+     ],
+     "rows": [
+      [
+       "T0",
+       "Probation",
+       "120"
+      ],
+      [
+       "T1",
+       "Trusted",
+       "300"
+      ],
+      [
+       "T2",
+       "Established",
+       "600"
+      ],
+      [
+       "T3",
+       "Proven",
+       "1000"
+      ]
+     ]
+    }
+   ],
+   "actions": [
+    {
+     "at": "hundred",
+     "do": "highlight",
+     "target": "tiers",
+     "rows": [
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 15,
+   "elements": [
+    {
+     "id": "conds",
+     "kind": "list",
+     "at": "move",
+     "x": 9.2,
+     "y": 3.1,
+     "w": 5.9,
+     "h": 3.3,
+     "items": [
+      "time served in the tier",
+      "real risk carried",
+      "authority actually used",
+      "enough receipts",
+      "no incidents"
+     ]
+    }
+   ],
+   "actions": [
+    {
+     "at": "move",
+     "do": "highlight",
+     "target": "tiers",
+     "rows": [
+      2
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 16,
+   "elements": [],
+   "actions": [
+    {
+     "at": "incidents",
+     "do": "pulse",
+     "target": "conds"
+    }
+   ]
+  },
+  {
+   "beat": 17,
+   "elements": [
+    {
+     "id": "inc",
+     "kind": "chip",
+     "at": "drops",
+     "x": 9.2,
+     "y": 6.9,
+     "w": 5.9,
+     "h": 0.65,
+     "text": "incident: demoted",
+     "tone": "bad"
+    }
+   ],
+   "actions": [
+    {
+     "at": "down",
+     "do": "highlight",
+     "target": "tiers",
+     "rows": [
+      1
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 18,
+   "elements": [
+    {
+     "id": "b",
+     "kind": "box",
+     "at": "two",
+     "x": 1.2,
+     "y": 2.1,
+     "w": 5.4,
+     "h": 1.4,
+     "label": "Agent B",
+     "sub": "brand new, tier T0",
+     "icon": "user",
+     "tone": "plain"
+    },
+    {
+     "id": "a",
+     "kind": "box",
+     "at": "agents",
+     "x": 9.6,
+     "y": 2.1,
+     "w": 5.4,
+     "h": 1.4,
+     "label": "Agent A",
+     "sub": "graduated, tier T1",
+     "icon": "user",
+     "tone": "plain"
+    },
+    {
+     "id": "db",
+     "kind": "chip",
+     "at": "deposit",
+     "x": 1.2,
+     "y": 3.9,
+     "w": 2.8,
+     "h": 0.65,
+     "text": "deposit 200",
+     "tone": "soft"
+    },
+    {
+     "id": "da",
+     "kind": "chip",
+     "at": "same",
+     "x": 9.6,
+     "y": 3.9,
+     "w": 2.8,
+     "h": 0.65,
+     "text": "deposit 200",
+     "tone": "soft"
+    }
+   ],
+   "actions": [],
+   "transition": "zoom"
+  },
+  {
+   "beat": 19,
+   "elements": [
+    {
+     "id": "cap",
+     "kind": "chip",
+     "at": "brand",
+     "x": 4.3,
+     "y": 3.9,
+     "w": 2.3,
+     "h": 0.65,
+     "text": "cap 120",
+     "tone": "ghost"
+    },
+    {
+     "id": "fail",
+     "kind": "stamp",
+     "at": "refuses",
+     "x": 1.5,
+     "y": 5.0,
+     "w": 3.8,
+     "h": 1.0,
+     "text": "OverMaxTx",
+     "tone": "bad"
+    },
+    {
+     "id": "txb",
+     "kind": "text",
+     "at": "transaction",
+     "x": 1.2,
+     "y": 6.4,
+     "w": 5.4,
+     "h": 0.5,
+     "text": "tx 0x9a8c2923…1492a8c",
+     "size": "s",
+     "tone": "muted",
+     "mono": true
+    }
+   ],
+   "actions": [
+    {
+     "at": "refuses",
+     "do": "cross",
+     "target": "b"
+    }
+   ]
+  },
+  {
+   "beat": 20,
+   "elements": [
+    {
+     "id": "up",
+     "kind": "chip",
+     "at": "graduated",
+     "x": 12.7,
+     "y": 3.9,
+     "w": 2.3,
+     "h": 0.65,
+     "text": "T0 → T1",
+     "tone": "accent"
+    },
+    {
+     "id": "ok",
+     "kind": "stamp",
+     "at": "goes",
+     "x": 9.9,
+     "y": 5.0,
+     "w": 3.6,
+     "h": 1.0,
+     "text": "success",
+     "tone": "ok"
+    },
+    {
+     "id": "txa",
+     "kind": "text",
+     "at": "through",
+     "x": 9.6,
+     "y": 6.4,
+     "w": 5.4,
+     "h": 0.5,
+     "text": "tx 0x68c77863…1467885",
+     "size": "s",
+     "tone": "muted",
+     "mono": true
+    }
+   ],
+   "actions": [
+    {
+     "at": "through",
+     "do": "check",
+     "target": "a"
+    }
+   ]
+  },
+  {
+   "beat": 21,
+   "elements": [
+    {
+     "id": "scan",
+     "kind": "chip",
+     "at": "explorer",
+     "x": 4.6,
+     "y": 7.4,
+     "w": 6.8,
+     "h": 0.65,
+     "text": "testnet.bscscan.com",
+     "tone": "accent"
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 22,
+   "elements": [
+    {
+     "id": "walk",
+     "kind": "video",
+     "at": "hosted",
+     "x": 2,
+     "y": 1.05,
+     "w": 12,
+     "h": 7.5,
+     "src": "walkthrough",
+     "fit": "cover"
+    }
+   ],
+   "actions": [],
+   "transition": "slide"
+  },
+  {
+   "beat": 23,
+   "elements": [],
+   "actions": []
+  },
+  {
+   "beat": 24,
+   "elements": [
+    {
+     "id": "sim",
+     "kind": "video",
+     "at": "simulator",
+     "x": 2,
+     "y": 1.05,
+     "w": 12,
+     "h": 7.5,
+     "src": "slider",
+     "fit": "cover",
+     "sync": {
+      "word": "flips",
+      "mark": 0
+     }
+    }
+   ],
+   "actions": [],
+   "transition": "push"
+  },
+  {
+   "beat": 25,
+   "elements": [],
+   "actions": []
+  },
+  {
+   "beat": 26,
+   "elements": [
+    {
+     "id": "lab",
+     "kind": "video",
+     "at": "attack",
+     "x": 2,
+     "y": 1.05,
+     "w": 12,
+     "h": 7.5,
+     "src": "attack",
+     "fit": "cover",
+     "sync": {
+      "word": "refused",
+      "mark": 0
+     },
+     "syncEnd": {
+      "word": "pauses",
+      "mark": 2
+     }
+    }
+   ],
+   "actions": [],
+   "transition": "cut"
+  },
+  {
+   "beat": 27,
+   "elements": [],
+   "actions": []
+  },
+  {
+   "beat": 28,
+   "elements": [],
+   "actions": []
+  },
+  {
+   "beat": 29,
+   "elements": [],
+   "actions": []
+  },
+  {
+   "beat": 30,
+   "elements": [
+    {
+     "id": "acct",
+     "kind": "video",
+     "at": "live",
+     "x": 2,
+     "y": 1.05,
+     "w": 12,
+     "h": 7.5,
+     "src": "account",
+     "fit": "cover",
+     "sync": {
+      "word": "shows",
+      "mark": 0
+     },
+     "syncEnd": {
+      "word": "sent",
+      "mark": 1
+     }
+    }
+   ],
+   "actions": [],
+   "transition": "slide"
+  },
+  {
+   "beat": 31,
+   "elements": [],
+   "actions": []
+  },
+  {
+   "beat": 32,
+   "elements": [],
+   "actions": []
+  },
+  {
+   "beat": 33,
+   "elements": [
+    {
+     "id": "ver",
+     "kind": "video",
+     "at": "trust",
+     "x": 2,
+     "y": 1.05,
+     "w": 12,
+     "h": 7.5,
+     "src": "verify",
+     "fit": "cover",
+     "sync": {
+      "word": "replay",
+      "mark": 0
+     }
+    }
+   ],
+   "actions": [],
+   "transition": "push"
+  },
+  {
+   "beat": 34,
+   "elements": [
+    {
+     "id": "ring",
+     "kind": "box",
+     "at": "replays",
+     "x": 8.85,
+     "y": 2.8,
+     "w": 3.35,
+     "h": 2.8,
+     "label": " ",
+     "sub": "",
+     "icon": "none",
+     "tone": "ghost"
+    }
+   ],
+   "actions": [
+    {
+     "at": "replays",
+     "do": "focus",
+     "target": [
+      "ring"
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 35,
+   "elements": [
+    {
+     "id": "n89",
+     "kind": "number",
+     "at": "eighty-nine",
+     "x": 0.9,
+     "y": 2.0,
+     "w": 4.3,
+     "h": 2.1,
+     "value": 89,
+     "label": "contract tests passing",
+     "suffix": ""
+    }
+   ],
+   "actions": [],
+   "transition": "zoom"
+  },
+  {
+   "beat": 36,
+   "elements": [
+    {
+     "id": "n144",
+     "kind": "number",
+     "at": "forty-four",
+     "x": 5.9,
+     "y": 2.0,
+     "w": 4.3,
+     "h": 2.1,
+     "value": 144,
+     "label": "cases: both engines agree",
+     "suffix": ""
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 37,
+   "elements": [
+    {
+     "id": "n30",
+     "kind": "number",
+     "at": "thirty",
+     "x": 10.8,
+     "y": 2.0,
+     "w": 4.3,
+     "h": 2.1,
+     "value": 30,
+     "label": "live calls to a real model",
+     "suffix": ""
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 38,
+   "elements": [
+    {
+     "id": "n0",
+     "kind": "number",
+     "at": "unsafe",
+     "x": 5.4,
+     "y": 5.0,
+     "w": 5.2,
+     "h": 2.4,
+     "value": 0,
+     "label": "unsafe actions got through",
+     "suffix": "%"
+    }
+   ],
+   "actions": [
+    {
+     "at": "validation",
+     "do": "pulse",
+     "target": "n0"
+    }
+   ]
+  },
+  {
+   "beat": 39,
+   "elements": [
+    {
+     "id": "hf",
+     "kind": "box",
+     "at": "measures",
+     "x": 0.9,
+     "y": 2.2,
+     "w": 5.6,
+     "h": 1.5,
+     "label": "Vault Health Feed",
+     "sub": "measured redemption times",
+     "icon": "clock",
+     "tone": "accent"
+    },
+    {
+     "id": "lat",
+     "kind": "table",
+     "at": "redemptions",
+     "x": 7.4,
+     "y": 2.2,
+     "w": 7.6,
+     "h": 2.5,
+     "columns": [
+      "redemptions",
+      "measured"
+     ],
+     "rows": [
+      [
+       "median settle",
+       "0.26 hours"
+      ],
+      [
+       "slowest settled",
+       "12.7 days"
+      ]
+     ]
+    }
+   ],
+   "actions": [],
+   "transition": "slide"
+  },
+  {
+   "beat": 40,
+   "elements": [
+    {
+     "id": "hist",
+     "kind": "box",
+     "at": "history",
+     "x": 0.9,
+     "y": 5.3,
+     "w": 5.6,
+     "h": 1.4,
+     "label": "Request history",
+     "sub": "read from the vault",
+     "icon": "database",
+     "tone": "plain"
+    },
+    {
+     "id": "docs",
+     "kind": "chip",
+     "at": "documentation",
+     "x": 7.4,
+     "y": 5.65,
+     "w": 4.2,
+     "h": 0.7,
+     "text": "the docs' promise",
+     "tone": "ghost"
+    },
+    {
+     "id": "h1",
+     "kind": "arrow",
+     "at": "history",
+     "from": "hist",
+     "to": "hf",
+     "flow": true
+    }
+   ],
+   "actions": [
+    {
+     "at": "documentation",
+     "do": "cross",
+     "target": "docs"
+    }
+   ]
+  },
+  {
+   "beat": 41,
+   "elements": [
+    {
+     "id": "code",
+     "kind": "code",
+     "at": "graduate",
+     "x": 0.9,
+     "y": 1.5,
+     "w": 9.4,
+     "h": 4.3,
+     "title": "contracts/src/StewardAccount.sol",
+     "lines": [
+      "function graduate() external nonReentrant {",
+      "    uint16 failedMask = TierEngine.checkPromotion(",
+      "        tierState,",
+      "…",
+      "    );",
+      "    if (failedMask != 0) revert NotEligibleForGraduation();",
+      "    tierState = TierEngine.graduate(tierState, nowTs);",
+      "}"
+     ],
+     "focus": []
+    },
+    {
+     "id": "conds2",
+     "kind": "list",
+     "at": "condition",
+     "x": 10.8,
+     "y": 1.5,
+     "w": 4.4,
+     "h": 4.3,
+     "items": [
+      "time served",
+      "risk carried",
+      "authority used",
+      "receipts",
+      "no incidents"
+     ]
+    }
+   ],
+   "actions": [
+    {
+     "at": "passes",
+     "do": "focus",
+     "target": [
+      "code"
+     ]
+    },
+    {
+     "at": "holds",
+     "do": "highlight",
+     "target": "code",
+     "lines": [
+      6
+     ]
+    }
+   ],
+   "transition": "zoom"
+  },
+  {
+   "beat": 42,
+   "elements": [
+    {
+     "id": "earned",
+     "kind": "stamp",
+     "at": "earned",
+     "x": 5.8,
+     "y": 6.4,
+     "w": 3.6,
+     "h": 1.1,
+     "text": "earned",
+     "tone": "ok"
+    }
+   ],
+   "actions": [
+    {
+     "at": "authority",
+     "do": "reset",
+     "target": []
+    }
+   ]
+  }
+ ]
+}
