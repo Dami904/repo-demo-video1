@@ -1,0 +1,19 @@
+{
+  "name": "gitdiagram-repo-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "voices": "tsx scripts/voices.ts",
+    "plan": "tsx scripts/plan.ts",
+    "voice": "tsx scripts/voice.ts",
+    "preview": "tsx scripts/serve.ts",
+    "render": "tsx scripts/render.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "dotenv": "^18.0.4",
+    "puppeteer-core": "^25.12.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

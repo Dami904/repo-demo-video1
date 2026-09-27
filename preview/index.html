@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Film preview</title>
+    <style>
+      :root { color-scheme: dark; }
+      body { margin: 0; background: #0e0c12; color: #eee; font: 14px system-ui, sans-serif; }
+      main { max-width: 1200px; margin: 0 auto; padding: 16px; }
+      .frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 10px; overflow: hidden; }
+      .frame.vertical { aspect-ratio: 9 / 16; max-width: 420px; margin: 0 auto; }
+      iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+      .bar { display: flex; gap: 10px; align-items: center; margin-top: 12px; flex-wrap: wrap; }
+      button { background: #9333ea; color: white; border: 0; padding: 8px 16px; border-radius: 6px; font-weight: 600; cursor: pointer; }
+      button:disabled { opacity: 0.5; cursor: default; }
+      input[type="range"] { flex: 1; min-width: 200px; }
+      #status { color: #aaa; min-width: 90px; }
+      a { color: #c79bff; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="frame" class="frame"><iframe id="stage" title="Film stage"></iframe></div>
+      <div class="bar">
+        <button id="play" disabled>Loading…</button>
+        <input id="scrub" type="range" min="0" max="1" step="0.01" value="0" />
+        <span id="status">0.0s</span>
+        <label><input id="captions" type="checkbox" checked /> captions</label>
+        <a id="layout" href="#">vertical</a>
+      </div>
+    </main>
+    <script>
+      // Mirrors GitDiagram's player: the stage builds the scene timeline, this
+      // page owns the clock and the sound, and seeks the stage every frame.
+      const params = new URLSearchParams(location.search);
+      const film = params.get("film") || "gitdiagram";
+      const layout = params.get("layout") === "vertical" ? "vertical" : "landscape";
+      const other = new URLSearchParams(params);
+      other.set("layout", layout === "vertical" ? "landscape" : "vertical");
+      document.getElementById("layout").href = "?" + other;
+      document.getElementById("layout").textContent = layout === "vertical" ? "landscape" : "vertical";
+      if (layout === "vertical") document.getElementById("frame").classList.add("vertical");
+
+      const stage = document.getElementById("stage");
+      const play = document.getElementById("play");
+      const scrub = document.getElementById("scrub");
+      const status = document.getElementById("status");
+      const captionsBox = document.getElementById("captions");
+
+      // Same levels as the MP4 mix (engine.ts in GitDiagram).
+      const SFX_PEAK_DB = { pop: -5.3, stamp: -10.4, tick: -5.9, whoosh: -0.7 };
+      const MASTER_GAIN = 0.9;
+      const sfxGain = (name, db) => 10 ** ((-6 - (SFX_PEAK_DB[name] ?? -6) + db) / 20);
+
+      let artifact, version, duration = 0, cues = [];
+      let audio = null, voice = null, effects = {};
+      let playing = false, startedAt = 0, offset = 0, sources = [];
+
+      const now = () => (playing ? offset + audio.currentTime - startedAt : offset);
+
+      async function setup() {
+        artifact = await (await fetch(`/videos/${film}/artifact.json`)).json();
+        const html = await (await fetch(`/engine/${film}/stage.html`)).text();
+        version = /stage\.js\?v=(\w+)/.exec(html)?.[1] ?? "0";
+        stage.src = `/engine/${film}/stage.html?v=${version}`;
+      }
+
+      window.addEventListener("message", async (event) => {
+        if (event.source !== stage.contentWindow) return;
+        const message = event.data || {};
+        if (message.type === "stage-ready") {
+          stage.contentWindow.postMessage(
+            { type: "load", spec: artifact.plan, meta: artifact.meta, timing: artifact.timing, captions: true, layout },
+            location.origin,
+          );
+        } else if (message.type === "ready") {
+          duration = message.duration;
+          cues = message.sfx || [];
+          scrub.max = String(duration);
+          play.disabled = false;
+          play.textContent = "Play";
+        } else if (message.type === "error") {
+          play.textContent = "Stage error";
+          status.textContent = message.message;
+        }
+      });
+
+      async function loadSound() {
+        if (audio) return;
+        audio = new AudioContext();
+        const decode = async (url) => audio.decodeAudioData(await (await fetch(url)).arrayBuffer());
+        voice = await decode(`/videos/${film}/narration.mp3`);
+        for (const name of new Set(cues.map((cue) => cue.name)))
+          if (name in SFX_PEAK_DB) effects[name] = await decode(`/engine/${film}/assets/sfx/${name}.mp3?v=${version}`);
+      }
+
+      function schedule(from) {
+        const base = audio.currentTime + 0.05;
+        const add = (buffer, at, gain, rate = 1) => {
+          if (at + buffer.duration / rate < from) return;
+          const source = audio.createBufferSource();
+          source.buffer = buffer;
+          source.playbackRate.value = rate;
+          const level = audio.createGain();
+          level.gain.value = gain * MASTER_GAIN;
+          source.connect(level).connect(audio.destination);
+          const when = base + Math.max(0, at - from);
+          source.start(when, Math.max(0, from - at) * rate);
+          sources.push(source);
+        };
+        for (const [index, clip] of artifact.voices.entries()) if (index === 0) add(voice, clip.start, 1);
+        for (const cue of cues) if (effects[cue.name] && cue.t >= from) add(effects[cue.name], cue.t, sfxGain(cue.name, cue.gain), cue.rate);
+        startedAt = base;
+      }
+
+      function stop() {
+        for (const source of sources) try { source.stop(); } catch {}
+        sources = [];
+      }
+
+      async function toggle() {
+        await loadSound();
+        if (playing) {
+          offset = now();
+          playing = false;
+          stop();
+          play.textContent = "Play";
+          return;
+        }
+        if (offset >= duration - 0.05) offset = 0;
+        await audio.resume();
+        schedule(offset);
+        playing = true;
+        play.textContent = "Pause";
+      }
+
+      function seekTo(t) {
+        const wasPlaying = playing;
+        if (playing) { stop(); playing = false; }
+        offset = Math.max(0, Math.min(duration, t));
+        if (wasPlaying) { schedule(offset); playing = true; }
+      }
+
+      play.addEventListener("click", toggle);
+      scrub.addEventListener("input", () => seekTo(Number(scrub.value)));
+      captionsBox.addEventListener("change", () =>
+        stage.contentWindow.postMessage({ type: "captions", on: captionsBox.checked }, location.origin),
+      );
+      document.addEventListener("keydown", (event) => {
+        if (event.key === " ") { event.preventDefault(); if (!play.disabled) toggle(); }
+        if (event.key === "ArrowRight") seekTo(now() + 5);
+        if (event.key === "ArrowLeft") seekTo(now() - 5);
+      });
+
+      (function frame() {
+        if (duration) {
+          let t = now();
+          if (playing && t >= duration) { offset = duration; playing = false; stop(); play.textContent = "Play"; t = duration; }
+          stage.contentWindow.postMessage({ type: "seek", time: t }, location.origin);
+          scrub.value = String(t);
+          status.textContent = t.toFixed(1) + "s / " + duration.toFixed(1) + "s";
+        }
+        requestAnimationFrame(frame);
+      })();
+
+      setup();
+    </script>
+  </body>
+</html>

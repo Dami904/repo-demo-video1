@@ -1,0 +1,1432 @@
+{
+  "repository": "Dami904/seal",
+  "createdAt": "2026-09-27T08:42:13.900Z",
+  "meta": {
+    "owner": "Dami904",
+    "repo": "seal",
+    "url": "https://github.com/Dami904/seal",
+    "description": "Trade Bitget rTokens when US cash stocks are closed. Publish the rule. Seal the size.",
+    "stars": 0,
+    "language": "Python"
+  },
+  "timing": {
+    "DURATION": 53.6,
+    "SPEECH_END": 49.905,
+    "beats": [
+      {
+        "start": 0.4,
+        "end": 4.44,
+        "words": [
+          {
+            "w": "earnings",
+            "s": 0.4,
+            "e": 0.841
+          },
+          {
+            "w": "drop",
+            "s": 0.888,
+            "e": 1.143
+          },
+          {
+            "w": "after",
+            "s": 1.224,
+            "e": 1.468
+          },
+          {
+            "w": "the",
+            "s": 1.515,
+            "e": 1.584
+          },
+          {
+            "w": "bell",
+            "s": 1.631,
+            "e": 2.083
+          },
+          {
+            "w": "but",
+            "s": 2.2,
+            "e": 2.362
+          },
+          {
+            "w": "the",
+            "s": 2.385,
+            "e": 2.455
+          },
+          {
+            "w": "stock",
+            "s": 2.501,
+            "e": 2.78
+          },
+          {
+            "w": "cant",
+            "s": 2.873,
+            "e": 3.14
+          },
+          {
+            "w": "trade",
+            "s": 3.186,
+            "e": 3.523
+          },
+          {
+            "w": "until",
+            "s": 3.558,
+            "e": 3.825
+          },
+          {
+            "w": "morning",
+            "s": 3.895,
+            "e": 4.44
+          }
+        ]
+      },
+      {
+        "start": 4.765,
+        "end": 7.517,
+        "words": [
+          {
+            "w": "its",
+            "s": 4.765,
+            "e": 4.963
+          },
+          {
+            "w": "bitget",
+            "s": 5.021,
+            "e": 5.462
+          },
+          {
+            "w": "rtoken",
+            "s": 5.543,
+            "e": 6.159
+          },
+          {
+            "w": "can",
+            "s": 6.24,
+            "e": 6.704
+          },
+          {
+            "w": "all",
+            "s": 6.727,
+            "e": 6.936
+          },
+          {
+            "w": "night",
+            "s": 7.006,
+            "e": 7.517
+          }
+        ]
+      },
+      {
+        "start": 8.33,
+        "end": 11.464,
+        "words": [
+          {
+            "w": "seal",
+            "s": 8.33,
+            "e": 8.666
+          },
+          {
+            "w": "compares",
+            "s": 8.724,
+            "e": 9.142
+          },
+          {
+            "w": "that",
+            "s": 9.189,
+            "e": 9.316
+          },
+          {
+            "w": "night",
+            "s": 9.386,
+            "e": 9.583
+          },
+          {
+            "w": "price",
+            "s": 9.63,
+            "e": 9.909
+          },
+          {
+            "w": "with",
+            "s": 9.932,
+            "e": 10.059
+          },
+          {
+            "w": "the",
+            "s": 10.094,
+            "e": 10.164
+          },
+          {
+            "w": "last",
+            "s": 10.21,
+            "e": 10.466
+          },
+          {
+            "w": "official",
+            "s": 10.501,
+            "e": 10.849
+          },
+          {
+            "w": "close",
+            "s": 10.907,
+            "e": 11.464
+          }
+        ]
+      },
+      {
+        "start": 11.673,
+        "end": 15.017,
+        "words": [
+          {
+            "w": "and",
+            "s": 11.673,
+            "e": 11.813
+          },
+          {
+            "w": "when",
+            "s": 11.847,
+            "e": 11.987
+          },
+          {
+            "w": "the",
+            "s": 12.022,
+            "e": 12.091
+          },
+          {
+            "w": "gap",
+            "s": 12.126,
+            "e": 12.358
+          },
+          {
+            "w": "clears",
+            "s": 12.428,
+            "e": 12.776
+          },
+          {
+            "w": "one",
+            "s": 12.846,
+            "e": 13.008
+          },
+          {
+            "w": "and",
+            "s": 13.032,
+            "e": 13.101
+          },
+          {
+            "w": "a",
+            "s": 13.148,
+            "e": 13.183
+          },
+          {
+            "w": "half",
+            "s": 13.241,
+            "e": 13.415
+          },
+          {
+            "w": "percent",
+            "s": 13.473,
+            "e": 14.065
+          },
+          {
+            "w": "it",
+            "s": 14.158,
+            "e": 14.297
+          },
+          {
+            "w": "trades",
+            "s": 14.332,
+            "e": 15.017
+          }
+        ]
+      },
+      {
+        "start": 15.714,
+        "end": 18.872,
+        "words": [
+          {
+            "w": "with",
+            "s": 15.714,
+            "e": 15.888
+          },
+          {
+            "w": "the",
+            "s": 15.923,
+            "e": 15.992
+          },
+          {
+            "w": "move",
+            "s": 16.039,
+            "e": 16.306
+          },
+          {
+            "w": "on",
+            "s": 16.352,
+            "e": 16.434
+          },
+          {
+            "w": "news",
+            "s": 16.515,
+            "e": 16.77
+          },
+          {
+            "w": "nights",
+            "s": 16.84,
+            "e": 17.223
+          },
+          {
+            "w": "against",
+            "s": 17.258,
+            "e": 17.664
+          },
+          {
+            "w": "it",
+            "s": 17.722,
+            "e": 17.792
+          },
+          {
+            "w": "on",
+            "s": 17.85,
+            "e": 17.931
+          },
+          {
+            "w": "quiet",
+            "s": 18.001,
+            "e": 18.314
+          },
+          {
+            "w": "ones",
+            "s": 18.384,
+            "e": 18.872
+          }
+        ]
+      },
+      {
+        "start": 19.255,
+        "end": 22.633,
+        "words": [
+          {
+            "w": "but",
+            "s": 19.255,
+            "e": 19.429
+          },
+          {
+            "w": "one",
+            "s": 19.487,
+            "e": 19.684
+          },
+          {
+            "w": "big",
+            "s": 19.731,
+            "e": 19.905
+          },
+          {
+            "w": "order",
+            "s": 19.975,
+            "e": 20.311
+          },
+          {
+            "w": "in",
+            "s": 20.381,
+            "e": 20.462
+          },
+          {
+            "w": "a",
+            "s": 20.509,
+            "e": 20.543
+          },
+          {
+            "w": "thin",
+            "s": 20.625,
+            "e": 20.845
+          },
+          {
+            "w": "night",
+            "s": 20.961,
+            "e": 21.182
+          },
+          {
+            "w": "book",
+            "s": 21.24,
+            "e": 21.496
+          },
+          {
+            "w": "gives",
+            "s": 21.612,
+            "e": 21.832
+          },
+          {
+            "w": "you",
+            "s": 21.879,
+            "e": 21.972
+          },
+          {
+            "w": "away",
+            "s": 22.041,
+            "e": 22.633
+          }
+        ]
+      },
+      {
+        "start": 22.877,
+        "end": 26.766,
+        "words": [
+          {
+            "w": "so",
+            "s": 22.877,
+            "e": 23.016
+          },
+          {
+            "w": "seal",
+            "s": 23.098,
+            "e": 23.388
+          },
+          {
+            "w": "cuts",
+            "s": 23.469,
+            "e": 23.69
+          },
+          {
+            "w": "it",
+            "s": 23.725,
+            "e": 23.806
+          },
+          {
+            "w": "into",
+            "s": 23.841,
+            "e": 23.992
+          },
+          {
+            "w": "eight",
+            "s": 24.073,
+            "e": 24.282
+          },
+          {
+            "w": "small",
+            "s": 24.328,
+            "e": 24.607
+          },
+          {
+            "w": "clips",
+            "s": 24.677,
+            "e": 25.164
+          },
+          {
+            "w": "sent",
+            "s": 25.28,
+            "e": 25.536
+          },
+          {
+            "w": "at",
+            "s": 25.571,
+            "e": 25.64
+          },
+          {
+            "w": "random",
+            "s": 25.698,
+            "e": 26.023
+          },
+          {
+            "w": "delays",
+            "s": 26.081,
+            "e": 26.766
+          }
+        ]
+      },
+      {
+        "start": 27.37,
+        "end": 31.805,
+        "words": [
+          {
+            "w": "a",
+            "s": 27.37,
+            "e": 27.451
+          },
+          {
+            "w": "python",
+            "s": 27.544,
+            "e": 27.927
+          },
+          {
+            "w": "backtest",
+            "s": 27.997,
+            "e": 28.624
+          },
+          {
+            "w": "replays",
+            "s": 28.833,
+            "e": 29.309
+          },
+          {
+            "w": "real",
+            "s": 29.402,
+            "e": 29.657
+          },
+          {
+            "w": "bitget",
+            "s": 29.75,
+            "e": 30.145
+          },
+          {
+            "w": "candles",
+            "s": 30.203,
+            "e": 30.609
+          },
+          {
+            "w": "for",
+            "s": 30.667,
+            "e": 30.772
+          },
+          {
+            "w": "five",
+            "s": 30.842,
+            "e": 31.166
+          },
+          {
+            "w": "stocks",
+            "s": 31.213,
+            "e": 31.805
+          }
+        ]
+      },
+      {
+        "start": 32.014,
+        "end": 35.81,
+        "words": [
+          {
+            "w": "and",
+            "s": 32.014,
+            "e": 32.165
+          },
+          {
+            "w": "a",
+            "s": 32.223,
+            "e": 32.246
+          },
+          {
+            "w": "dashboard",
+            "s": 32.304,
+            "e": 32.827
+          },
+          {
+            "w": "turns",
+            "s": 32.873,
+            "e": 33.152
+          },
+          {
+            "w": "the",
+            "s": 33.21,
+            "e": 33.279
+          },
+          {
+            "w": "same",
+            "s": 33.326,
+            "e": 33.593
+          },
+          {
+            "w": "signal",
+            "s": 33.628,
+            "e": 33.964
+          },
+          {
+            "w": "into",
+            "s": 34.034,
+            "e": 34.208
+          },
+          {
+            "w": "a",
+            "s": 34.29,
+            "e": 34.313
+          },
+          {
+            "w": "preopen",
+            "s": 34.382,
+            "e": 34.951
+          },
+          {
+            "w": "forecast",
+            "s": 35.033,
+            "e": 35.81
+          }
+        ]
+      },
+      {
+        "start": 36.321,
+        "end": 41.464,
+        "words": [
+          {
+            "w": "every",
+            "s": 36.321,
+            "e": 36.612
+          },
+          {
+            "w": "stock",
+            "s": 36.67,
+            "e": 36.971
+          },
+          {
+            "w": "wins",
+            "s": 37.053,
+            "e": 37.366
+          },
+          {
+            "w": "in",
+            "s": 37.424,
+            "e": 37.517
+          },
+          {
+            "w": "sample",
+            "s": 37.598,
+            "e": 38.272
+          },
+          {
+            "w": "out",
+            "s": 38.655,
+            "e": 38.875
+          },
+          {
+            "w": "of",
+            "s": 38.934,
+            "e": 38.992
+          },
+          {
+            "w": "sample",
+            "s": 39.05,
+            "e": 39.572
+          },
+          {
+            "w": "only",
+            "s": 39.688,
+            "e": 39.955
+          },
+          {
+            "w": "nvidia",
+            "s": 40.025,
+            "e": 40.408
+          },
+          {
+            "w": "stays",
+            "s": 40.466,
+            "e": 40.745
+          },
+          {
+            "w": "positive",
+            "s": 40.791,
+            "e": 41.464
+          }
+        ]
+      },
+      {
+        "start": 41.906,
+        "end": 45.098,
+        "words": [
+          {
+            "w": "no",
+            "s": 41.906,
+            "e": 42.057
+          },
+          {
+            "w": "model",
+            "s": 42.138,
+            "e": 42.405
+          },
+          {
+            "w": "picks",
+            "s": 42.475,
+            "e": 42.707
+          },
+          {
+            "w": "the",
+            "s": 42.753,
+            "e": 42.834
+          },
+          {
+            "w": "trade",
+            "s": 42.881,
+            "e": 43.403
+          },
+          {
+            "w": "one",
+            "s": 43.612,
+            "e": 43.821
+          },
+          {
+            "w": "small",
+            "s": 43.856,
+            "e": 44.123
+          },
+          {
+            "w": "function",
+            "s": 44.181,
+            "e": 44.576
+          },
+          {
+            "w": "does",
+            "s": 44.634,
+            "e": 45.098
+          }
+        ]
+      },
+      {
+        "start": 45.214,
+        "end": 49.905,
+        "words": [
+          {
+            "w": "so",
+            "s": 45.214,
+            "e": 45.354
+          },
+          {
+            "w": "anyone",
+            "s": 45.435,
+            "e": 45.818
+          },
+          {
+            "w": "can",
+            "s": 45.853,
+            "e": 45.981
+          },
+          {
+            "w": "replay",
+            "s": 46.05,
+            "e": 46.422
+          },
+          {
+            "w": "the",
+            "s": 46.48,
+            "e": 46.55
+          },
+          {
+            "w": "rule",
+            "s": 46.619,
+            "e": 47.223
+          },
+          {
+            "w": "and",
+            "s": 47.827,
+            "e": 47.978
+          },
+          {
+            "w": "only",
+            "s": 48.047,
+            "e": 48.245
+          },
+          {
+            "w": "the",
+            "s": 48.291,
+            "e": 48.372
+          },
+          {
+            "w": "size",
+            "s": 48.43,
+            "e": 48.779
+          },
+          {
+            "w": "stays",
+            "s": 48.802,
+            "e": 49.104
+          },
+          {
+            "w": "sealed",
+            "s": 49.162,
+            "e": 49.905
+          }
+        ]
+      }
+    ]
+  },
+  "voices": [
+    {
+      "start": 0.4
+    }
+  ],
+  "version": 2,
+  "plan": {
+    "title": "SEAL: trade the closed hours",
+    "outro": "Public rule. Sealed size.",
+    "beats": [
+      {
+        "scene": "1",
+        "narration": "Earnings drop after the bell... but the stock can't trade until morning.",
+        "transition": "cut",
+        "elements": [
+          {
+            "id": "ev",
+            "kind": "chip",
+            "at": "earnings",
+            "x": 1.2,
+            "y": 1.8,
+            "w": 4.6,
+            "h": 0.7,
+            "text": "earnings after the bell",
+            "tone": "soft"
+          },
+          {
+            "id": "cash",
+            "kind": "box",
+            "at": "stock",
+            "x": 1.2,
+            "y": 3.1,
+            "w": 5.8,
+            "h": 1.6,
+            "label": "TSLA (cash)",
+            "sub": "NYSE / Nasdaq",
+            "icon": "lock",
+            "tone": "ghost"
+          },
+          {
+            "id": "shut",
+            "kind": "stamp",
+            "at": "cant",
+            "x": 1.8,
+            "y": 5.4,
+            "w": 3.6,
+            "h": 1.1,
+            "text": "CLOSED",
+            "tone": "bad"
+          }
+        ],
+        "actions": [
+          {
+            "do": "dim",
+            "at": "morning",
+            "target": [
+              "cash"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "1",
+        "narration": "Its Bitget rToken can, all night.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "rtok",
+            "kind": "box",
+            "at": "rtoken",
+            "x": 9,
+            "y": 3.1,
+            "w": 5.8,
+            "h": 1.6,
+            "label": "rTSLA on Bitget",
+            "sub": "RTSLAUSDT",
+            "icon": "bolt",
+            "tone": "accent"
+          },
+          {
+            "id": "bridge",
+            "kind": "arrow",
+            "at": "can",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "cash",
+            "to": "rtok",
+            "label": "",
+            "dashed": true,
+            "flow": false
+          },
+          {
+            "id": "live",
+            "kind": "chip",
+            "at": "night",
+            "x": 9,
+            "y": 5.4,
+            "w": 4.4,
+            "h": 0.7,
+            "text": "still trading at night",
+            "tone": "ok"
+          }
+        ],
+        "actions": [
+          {
+            "do": "pulse",
+            "at": "night",
+            "target": [
+              "rtok"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "2",
+        "narration": "SEAL compares that night price with the last official close,",
+        "transition": "push",
+        "elements": [
+          {
+            "id": "cl",
+            "kind": "box",
+            "at": "close",
+            "x": 1,
+            "y": 2,
+            "w": 4.6,
+            "h": 1.2,
+            "label": "Last cash close",
+            "sub": "official close",
+            "icon": "clock",
+            "tone": "plain"
+          },
+          {
+            "id": "np",
+            "kind": "box",
+            "at": "night",
+            "x": 1,
+            "y": 3.8,
+            "w": 4.6,
+            "h": 1.2,
+            "label": "rToken now",
+            "sub": "15-minute candle",
+            "icon": "bolt",
+            "tone": "accent"
+          },
+          {
+            "id": "sp",
+            "kind": "text",
+            "at": "compares",
+            "x": 6.4,
+            "y": 2.9,
+            "w": 8.4,
+            "h": 1,
+            "text": "spread = rToken / cash_close - 1",
+            "size": "l",
+            "tone": "ink",
+            "mono": true
+          },
+          {
+            "id": "s1",
+            "kind": "arrow",
+            "at": "compares",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "cl",
+            "to": "sp",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          },
+          {
+            "id": "s2",
+            "kind": "arrow",
+            "at": "compares",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "np",
+            "to": "sp",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          }
+        ],
+        "actions": []
+      },
+      {
+        "scene": "2",
+        "narration": "and when the gap clears one and a half percent, it trades:",
+        "transition": "",
+        "elements": [
+          {
+            "id": "th",
+            "kind": "number",
+            "at": "percent",
+            "x": 6.4,
+            "y": 4.5,
+            "w": 3.6,
+            "h": 1.9,
+            "value": 1.5,
+            "prefix": "",
+            "suffix": "%",
+            "label": "entry threshold"
+          }
+        ],
+        "actions": [
+          {
+            "do": "pulse",
+            "at": "gap",
+            "target": [
+              "sp"
+            ]
+          },
+          {
+            "do": "highlight",
+            "at": "trades",
+            "target": [
+              "th"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "2",
+        "narration": "with the move on news nights, against it on quiet ones.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "fw",
+            "kind": "box",
+            "at": "move",
+            "x": 10.5,
+            "y": 4.4,
+            "w": 4.6,
+            "h": 1.2,
+            "label": "News night",
+            "sub": "earnings, FOMC, CPI: follow",
+            "icon": "bolt",
+            "tone": "ok"
+          },
+          {
+            "id": "fd",
+            "kind": "box",
+            "at": "quiet",
+            "x": 10.5,
+            "y": 6.2,
+            "w": 4.6,
+            "h": 1.2,
+            "label": "Quiet night",
+            "sub": "no event: fade the spike",
+            "icon": "clock",
+            "tone": "soft"
+          }
+        ],
+        "actions": []
+      },
+      {
+        "scene": "3",
+        "narration": "But one big order in a thin night book gives you away,",
+        "transition": "zoom",
+        "elements": [
+          {
+            "id": "po",
+            "kind": "box",
+            "at": "order",
+            "x": 1.2,
+            "y": 2.6,
+            "w": 5.2,
+            "h": 1.7,
+            "label": "Parent order",
+            "sub": "full size, one print",
+            "icon": "package",
+            "tone": "plain"
+          },
+          {
+            "id": "bk",
+            "kind": "box",
+            "at": "book",
+            "x": 9.6,
+            "y": 2.6,
+            "w": 5.2,
+            "h": 1.7,
+            "label": "Thin night book",
+            "sub": "after-hours rToken",
+            "icon": "queue",
+            "tone": "plain"
+          },
+          {
+            "id": "hit",
+            "kind": "arrow",
+            "at": "gives",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "po",
+            "to": "bk",
+            "label": "everyone sees",
+            "dashed": false,
+            "flow": false
+          }
+        ],
+        "actions": [
+          {
+            "do": "cross",
+            "at": "away",
+            "target": [
+              "po"
+            ]
+          },
+          {
+            "do": "shake",
+            "at": "away",
+            "target": [
+              "bk"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "3",
+        "narration": "so SEAL cuts it into eight small clips, sent at random delays.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "cfg",
+            "kind": "table",
+            "at": "eight",
+            "x": 1.2,
+            "y": 4.9,
+            "w": 6.4,
+            "h": 2.7,
+            "columns": [
+              "setting",
+              "value"
+            ],
+            "rows": [
+              [
+                "clip_count",
+                "8"
+              ],
+              [
+                "clip size",
+                "8-20% each"
+              ],
+              [
+                "jitter",
+                "5-45 s"
+              ]
+            ]
+          },
+          {
+            "id": "clips8",
+            "kind": "box",
+            "at": "clips",
+            "x": 1.2,
+            "y": 2.6,
+            "w": 5.2,
+            "h": 1.7,
+            "label": "8 sealed clips",
+            "sub": "sent at random delays",
+            "icon": "package",
+            "tone": "accent"
+          },
+          {
+            "id": "flow",
+            "kind": "arrow",
+            "at": "sent",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "clips8",
+            "to": "bk",
+            "label": "clips",
+            "dashed": false,
+            "flow": true
+          }
+        ],
+        "actions": [
+          {
+            "do": "exit",
+            "at": "cuts",
+            "target": [
+              "hit",
+              "po"
+            ]
+          },
+          {
+            "do": "pulse",
+            "at": "delays",
+            "target": [
+              "bk"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "4",
+        "narration": "A Python backtest replays real Bitget candles for five stocks,",
+        "transition": "slide",
+        "elements": [
+          {
+            "id": "term",
+            "kind": "terminal",
+            "at": "backtest",
+            "x": 0.9,
+            "y": 1.6,
+            "w": 8.2,
+            "h": 1.8,
+            "title": "seal",
+            "lines": [
+              "$ python scripts/run_backtest.py --config configs/default.yaml"
+            ]
+          },
+          {
+            "id": "data",
+            "kind": "tree",
+            "at": "candles",
+            "x": 0.9,
+            "y": 3.8,
+            "w": 6.2,
+            "h": 4.2,
+            "paths": [
+              "data/rtsla_rtoken_15m_raw.json",
+              "data/rnvda_rtoken_15m_raw.json",
+              "data/raapl_rtoken_15m_raw.json",
+              "data/ramzn_rtoken_15m_raw.json",
+              "data/rmsft_rtoken_15m_raw.json",
+              "seal/backtest.py"
+            ],
+            "focus": []
+          }
+        ],
+        "actions": [
+          {
+            "do": "highlight",
+            "at": "stocks",
+            "target": [
+              "data"
+            ],
+            "rows": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "4",
+        "narration": "and a dashboard turns the same signal into a pre-open forecast.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "dash",
+            "kind": "browser",
+            "at": "dashboard",
+            "x": 7.6,
+            "y": 3.8,
+            "w": 7.5,
+            "h": 4.6,
+            "url": "seal-alpha-factory.vercel.app"
+          },
+          {
+            "id": "p1",
+            "kind": "chip",
+            "at": "dashboard",
+            "x": 8.1,
+            "y": 4.7,
+            "w": 2.3,
+            "h": 0.6,
+            "text": "/backtest",
+            "tone": "soft"
+          },
+          {
+            "id": "p2",
+            "kind": "chip",
+            "at": "signal",
+            "x": 10.7,
+            "y": 4.7,
+            "w": 2.3,
+            "h": 0.6,
+            "text": "/forecast",
+            "tone": "accent"
+          },
+          {
+            "id": "fc",
+            "kind": "box",
+            "at": "forecast",
+            "x": 8.1,
+            "y": 5.8,
+            "w": 6.4,
+            "h": 1.3,
+            "label": "Pre-open forecast",
+            "sub": "implied fair value",
+            "icon": "clock",
+            "tone": "accent"
+          }
+        ],
+        "actions": []
+      },
+      {
+        "scene": "4",
+        "narration": "Every stock wins in sample... out of sample, only Nvidia stays positive.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "res",
+            "kind": "table",
+            "at": "sample",
+            "x": 0.9,
+            "y": 1.8,
+            "w": 6.3,
+            "h": 4.6,
+            "columns": [
+              "symbol",
+              "IS Sharpe",
+              "OOS Sharpe"
+            ],
+            "rows": [
+              [
+                "rTSLA",
+                "5.63",
+                "-1.46"
+              ],
+              [
+                "rNVDA",
+                "3.73",
+                "1.78"
+              ],
+              [
+                "rAAPL",
+                "4.53",
+                "n/a (1 trade)"
+              ],
+              [
+                "rAMZN",
+                "2.42",
+                "-3.67"
+              ],
+              [
+                "rMSFT",
+                "1.08",
+                "n/a (1 trade)"
+              ]
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "do": "exit",
+            "at": "every",
+            "target": [
+              "term",
+              "data"
+            ]
+          },
+          {
+            "do": "highlight",
+            "at": "nvidia",
+            "target": [
+              "res"
+            ],
+            "rows": [
+              2
+            ]
+          },
+          {
+            "do": "dim",
+            "at": "positive",
+            "target": [
+              "dash",
+              "p1",
+              "p2",
+              "fc"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "5",
+        "narration": "No model picks the trade; one small function does,",
+        "transition": "push",
+        "elements": [
+          {
+            "id": "code",
+            "kind": "code",
+            "at": "function",
+            "x": 0.9,
+            "y": 1.6,
+            "w": 9,
+            "h": 3.4,
+            "title": "seal/signal.py",
+            "lines": [
+              "if abs(spread) < threshold:",
+              "    return None",
+              "moved_up = spread > 0",
+              "trade_with_move = moved_up if is_event else not moved_up",
+              "return \"long\" if trade_with_move else \"short\""
+            ],
+            "focus": []
+          },
+          {
+            "id": "nm",
+            "kind": "stamp",
+            "at": "model",
+            "x": 10.8,
+            "y": 2.3,
+            "w": 3.6,
+            "h": 1.1,
+            "text": "no model",
+            "tone": "bad"
+          }
+        ],
+        "actions": [
+          {
+            "do": "focus",
+            "at": "function",
+            "target": [
+              "code"
+            ]
+          },
+          {
+            "do": "highlight",
+            "at": "does",
+            "target": [
+              "code"
+            ],
+            "lines": [
+              4
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "5",
+        "narration": "so anyone can replay the rule... and only the size stays sealed.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "pub",
+            "kind": "box",
+            "at": "replay",
+            "x": 0.9,
+            "y": 5.7,
+            "w": 5,
+            "h": 1.3,
+            "label": "Public",
+            "sub": "rules, costs, backtest",
+            "icon": "globe",
+            "tone": "ok"
+          },
+          {
+            "id": "hid",
+            "kind": "box",
+            "at": "size",
+            "x": 6.6,
+            "y": 5.7,
+            "w": 5.8,
+            "h": 1.3,
+            "label": "Sealed",
+            "sub": "residual size, clip count, jitter",
+            "icon": "lock",
+            "tone": "accent"
+          }
+        ],
+        "actions": [
+          {
+            "do": "reset",
+            "at": "anyone",
+            "target": []
+          },
+          {
+            "do": "check",
+            "at": "rule",
+            "target": [
+              "pub"
+            ]
+          },
+          {
+            "do": "pulse",
+            "at": "sealed",
+            "target": [
+              "hid"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

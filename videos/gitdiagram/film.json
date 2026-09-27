@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "owner": "ahmedkhaleel2004",
+    "repo": "gitdiagram",
+    "url": "https://github.com/ahmedkhaleel2004/gitdiagram",
+    "description": "Free, simple, fast interactive diagrams and explainer videos for any GitHub repository",
+    "stars": 17079,
+    "language": "TypeScript"
+  },
+  "sourceFiles": [
+    "src/server/generate/graph.ts",
+    "src/server/generate/graph-planner.ts",
+    "src/server/generate/mermaid.ts"
+  ],
+  "images": {
+    "img1": "docs/readme_img.png"
+  }
+}

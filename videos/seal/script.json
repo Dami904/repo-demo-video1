@@ -1,0 +1,67 @@
+{
+  "title": "SEAL: trade the closed hours",
+  "outro": "Public rule. Sealed size.",
+  "story": "Earnings drop after the bell... but the stock can't trade until morning. Its Bitget rToken can, all night. SEAL compares that night price with the last official close, and when the gap clears one and a half percent, it trades: with the move on news nights, against it on quiet ones. But one big order in a thin night book gives you away, so SEAL cuts it into eight small clips, sent at random delays. A Python backtest replays real Bitget candles for five stocks, and a dashboard turns the same signal into a pre-open forecast. Every stock wins in sample... out of sample, only Nvidia stays positive. No model picks the trade; one small function does, so anyone can replay the rule... and only the size stays sealed.",
+  "beats": [
+    {
+      "scene": "1",
+      "narration": "Earnings drop after the bell... but the stock can't trade until morning.",
+      "brief": "An 'earnings after the bell' chip; the cash TSLA box on the left, a CLOSED stamp slams on 'can't'."
+    },
+    {
+      "scene": "1",
+      "narration": "Its Bitget rToken can, all night.",
+      "brief": "The rTSLA box on Bitget lights up on the right; a price line draws on across the night on 'night'."
+    },
+    {
+      "scene": "2",
+      "narration": "SEAL compares that night price with the last official close,",
+      "brief": "Two inputs on the left (last cash close, rToken now) feed the spread formula, shown as mono text."
+    },
+    {
+      "scene": "2",
+      "narration": "and when the gap clears one and a half percent, it trades:",
+      "brief": "The formula pulses on 'gap'; a big number rolls to 1.5% labelled 'entry threshold'."
+    },
+    {
+      "scene": "2",
+      "narration": "with the move on news nights, against it on quiet ones.",
+      "brief": "Two boxes on the right: News night (follow) in green, Quiet night (fade)."
+    },
+    {
+      "scene": "3",
+      "narration": "But one big order in a thin night book gives you away,",
+      "brief": "A big parent order box and a thin night book box; an arrow between them; the order gets crossed on 'away'."
+    },
+    {
+      "scene": "3",
+      "narration": "so SEAL cuts it into eight small clips, sent at random delays.",
+      "brief": "The order becomes '8 sealed clips'; a table of the real config (8 clips, 8-20% each, 5-45 s jitter) appears; packets flow to the book on 'sent'."
+    },
+    {
+      "scene": "4",
+      "narration": "A Python backtest replays real Bitget candles for five stocks,",
+      "brief": "A terminal types the backtest command; a tree of the five real rToken candle files appears below."
+    },
+    {
+      "scene": "4",
+      "narration": "and a dashboard turns the same signal into a pre-open forecast.",
+      "brief": "The live dashboard browser on the right, with its backtest and forecast pages and a pre-open forecast box."
+    },
+    {
+      "scene": "4",
+      "narration": "Every stock wins in sample... out of sample, only Nvidia stays positive.",
+      "brief": "Terminal and tree leave; the real IS/OOS Sharpe table appears on the left; the rNVDA row lights on 'Nvidia'."
+    },
+    {
+      "scene": "5",
+      "narration": "No model picks the trade; one small function does,",
+      "brief": "The real parent_side code from seal/signal.py types in; a 'no model' stamp; the trade_with_move line highlights."
+    },
+    {
+      "scene": "5",
+      "narration": "so anyone can replay the rule... and only the size stays sealed.",
+      "brief": "Camera resets; a Public box (rules, costs, backtest) gets a check; a Sealed box (residual size, clip count, jitter) pulses on 'sealed'."
+    }
+  ]
+}

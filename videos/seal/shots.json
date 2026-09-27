@@ -1,0 +1,615 @@
+{
+ "shots": [
+  {
+   "beat": 0,
+   "transition": "cut",
+   "elements": [
+    {
+     "id": "ev",
+     "kind": "chip",
+     "at": "earnings",
+     "x": 1.2,
+     "y": 1.8,
+     "w": 4.6,
+     "h": 0.7,
+     "text": "earnings after the bell",
+     "tone": "soft"
+    },
+    {
+     "id": "cash",
+     "kind": "box",
+     "at": "stock",
+     "x": 1.2,
+     "y": 3.1,
+     "w": 5.8,
+     "h": 1.6,
+     "label": "TSLA (cash)",
+     "sub": "NYSE / Nasdaq",
+     "icon": "lock",
+     "tone": "ghost"
+    },
+    {
+     "id": "shut",
+     "kind": "stamp",
+     "at": "can't",
+     "x": 1.8,
+     "y": 5.4,
+     "w": 3.6,
+     "h": 1.1,
+     "text": "CLOSED",
+     "tone": "bad"
+    }
+   ],
+   "actions": [
+    {
+     "at": "morning",
+     "do": "dim",
+     "target": [
+      "cash"
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 1,
+   "elements": [
+    {
+     "id": "rtok",
+     "kind": "box",
+     "at": "rtoken",
+     "x": 9,
+     "y": 3.1,
+     "w": 5.8,
+     "h": 1.6,
+     "label": "rTSLA on Bitget",
+     "sub": "RTSLAUSDT",
+     "icon": "bolt",
+     "tone": "accent"
+    },
+    {
+     "id": "bridge",
+     "kind": "arrow",
+     "at": "can",
+     "from": "cash",
+     "to": "rtok",
+     "dashed": true
+    },
+    {
+     "id": "live",
+     "kind": "chip",
+     "at": "night",
+     "x": 9,
+     "y": 5.4,
+     "w": 4.4,
+     "h": 0.7,
+     "text": "still trading at night",
+     "tone": "ok"
+    }
+   ],
+   "actions": [
+    {
+     "at": "night",
+     "do": "pulse",
+     "target": "rtok"
+    }
+   ]
+  },
+  {
+   "beat": 2,
+   "transition": "push",
+   "elements": [
+    {
+     "id": "cl",
+     "kind": "box",
+     "at": "close",
+     "x": 1,
+     "y": 2,
+     "w": 4.6,
+     "h": 1.2,
+     "label": "Last cash close",
+     "sub": "official close",
+     "icon": "clock",
+     "tone": "plain"
+    },
+    {
+     "id": "np",
+     "kind": "box",
+     "at": "night",
+     "x": 1,
+     "y": 3.8,
+     "w": 4.6,
+     "h": 1.2,
+     "label": "rToken now",
+     "sub": "15-minute candle",
+     "icon": "bolt",
+     "tone": "accent"
+    },
+    {
+     "id": "sp",
+     "kind": "text",
+     "at": "compares",
+     "x": 6.4,
+     "y": 2.9,
+     "w": 8.4,
+     "h": 1,
+     "text": "spread = rToken / cash_close - 1",
+     "size": "l",
+     "tone": "ink",
+     "mono": true
+    },
+    {
+     "id": "s1",
+     "kind": "arrow",
+     "at": "compares",
+     "from": "cl",
+     "to": "sp"
+    },
+    {
+     "id": "s2",
+     "kind": "arrow",
+     "at": "compares",
+     "from": "np",
+     "to": "sp"
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 3,
+   "elements": [
+    {
+     "id": "th",
+     "kind": "number",
+     "at": "percent",
+     "x": 6.4,
+     "y": 4.5,
+     "w": 3.6,
+     "h": 1.9,
+     "value": 1.5,
+     "suffix": "%",
+     "label": "entry threshold"
+    }
+   ],
+   "actions": [
+    {
+     "at": "gap",
+     "do": "pulse",
+     "target": "sp"
+    },
+    {
+     "at": "trades",
+     "do": "highlight",
+     "target": "th"
+    }
+   ]
+  },
+  {
+   "beat": 4,
+   "elements": [
+    {
+     "id": "fw",
+     "kind": "box",
+     "at": "move",
+     "x": 10.5,
+     "y": 4.4,
+     "w": 4.6,
+     "h": 1.2,
+     "label": "News night",
+     "sub": "earnings, FOMC, CPI: follow",
+     "icon": "bolt",
+     "tone": "ok"
+    },
+    {
+     "id": "fd",
+     "kind": "box",
+     "at": "quiet",
+     "x": 10.5,
+     "y": 6.2,
+     "w": 4.6,
+     "h": 1.2,
+     "label": "Quiet night",
+     "sub": "no event: fade the spike",
+     "icon": "clock",
+     "tone": "soft"
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 5,
+   "transition": "zoom",
+   "elements": [
+    {
+     "id": "po",
+     "kind": "box",
+     "at": "order",
+     "x": 1.2,
+     "y": 2.6,
+     "w": 5.2,
+     "h": 1.7,
+     "label": "Parent order",
+     "sub": "full size, one print",
+     "icon": "package",
+     "tone": "plain"
+    },
+    {
+     "id": "bk",
+     "kind": "box",
+     "at": "book",
+     "x": 9.6,
+     "y": 2.6,
+     "w": 5.2,
+     "h": 1.7,
+     "label": "Thin night book",
+     "sub": "after-hours rToken",
+     "icon": "queue",
+     "tone": "plain"
+    },
+    {
+     "id": "hit",
+     "kind": "arrow",
+     "at": "gives",
+     "from": "po",
+     "to": "bk",
+     "label": "everyone sees"
+    }
+   ],
+   "actions": [
+    {
+     "at": "away",
+     "do": "cross",
+     "target": "po"
+    },
+    {
+     "at": "away",
+     "do": "shake",
+     "target": "bk"
+    }
+   ]
+  },
+  {
+   "beat": 6,
+   "elements": [
+    {
+     "id": "cfg",
+     "kind": "table",
+     "at": "eight",
+     "x": 1.2,
+     "y": 4.9,
+     "w": 6.4,
+     "h": 2.7,
+     "columns": [
+      "setting",
+      "value"
+     ],
+     "rows": [
+      [
+       "clip_count",
+       "8"
+      ],
+      [
+       "clip size",
+       "8-20% each"
+      ],
+      [
+       "jitter",
+       "5-45 s"
+      ]
+     ]
+    },
+    {
+     "id": "clips8",
+     "kind": "box",
+     "at": "clips",
+     "x": 1.2,
+     "y": 2.6,
+     "w": 5.2,
+     "h": 1.7,
+     "label": "8 sealed clips",
+     "sub": "sent at random delays",
+     "icon": "package",
+     "tone": "accent"
+    },
+    {
+     "id": "flow",
+     "kind": "arrow",
+     "at": "sent",
+     "from": "clips8",
+     "to": "bk",
+     "label": "clips",
+     "flow": true
+    }
+   ],
+   "actions": [
+    {
+     "at": "cuts",
+     "do": "exit",
+     "target": [
+      "hit",
+      "po"
+     ]
+    },
+    {
+     "at": "delays",
+     "do": "pulse",
+     "target": "bk"
+    }
+   ]
+  },
+  {
+   "beat": 7,
+   "transition": "slide",
+   "elements": [
+    {
+     "id": "term",
+     "kind": "terminal",
+     "at": "backtest",
+     "x": 0.9,
+     "y": 1.6,
+     "w": 8.2,
+     "h": 1.7,
+     "title": "seal",
+     "lines": [
+      "$ python scripts/run_backtest.py --config configs/default.yaml"
+     ]
+    },
+    {
+     "id": "data",
+     "kind": "tree",
+     "at": "candles",
+     "x": 0.9,
+     "y": 3.8,
+     "w": 6.2,
+     "h": 4.2,
+     "paths": [
+      "data/rtsla_rtoken_15m_raw.json",
+      "data/rnvda_rtoken_15m_raw.json",
+      "data/raapl_rtoken_15m_raw.json",
+      "data/ramzn_rtoken_15m_raw.json",
+      "data/rmsft_rtoken_15m_raw.json",
+      "seal/backtest.py"
+     ],
+     "focus": []
+    }
+   ],
+   "actions": [
+    {
+     "at": "stocks",
+     "do": "highlight",
+     "target": "data",
+     "rows": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 8,
+   "elements": [
+    {
+     "id": "dash",
+     "kind": "browser",
+     "at": "dashboard",
+     "x": 7.6,
+     "y": 3.8,
+     "w": 7.5,
+     "h": 4.6,
+     "url": "seal-alpha-factory.vercel.app"
+    },
+    {
+     "id": "p1",
+     "kind": "chip",
+     "at": "dashboard",
+     "x": 8.1,
+     "y": 4.7,
+     "w": 2.3,
+     "h": 0.6,
+     "text": "/backtest",
+     "tone": "soft"
+    },
+    {
+     "id": "p2",
+     "kind": "chip",
+     "at": "signal",
+     "x": 10.7,
+     "y": 4.7,
+     "w": 2.3,
+     "h": 0.6,
+     "text": "/forecast",
+     "tone": "accent"
+    },
+    {
+     "id": "fc",
+     "kind": "box",
+     "at": "forecast",
+     "x": 8.1,
+     "y": 5.8,
+     "w": 6.4,
+     "h": 1.3,
+     "label": "Pre-open forecast",
+     "sub": "implied fair value",
+     "icon": "clock",
+     "tone": "accent"
+    }
+   ],
+   "actions": []
+  },
+  {
+   "beat": 9,
+   "elements": [
+    {
+     "id": "res",
+     "kind": "table",
+     "at": "sample",
+     "x": 0.9,
+     "y": 1.8,
+     "w": 6.3,
+     "h": 4.6,
+     "columns": [
+      "symbol",
+      "IS Sharpe",
+      "OOS Sharpe"
+     ],
+     "rows": [
+      [
+       "rTSLA",
+       "5.63",
+       "-1.46"
+      ],
+      [
+       "rNVDA",
+       "3.73",
+       "1.78"
+      ],
+      [
+       "rAAPL",
+       "4.53",
+       "n/a (1 trade)"
+      ],
+      [
+       "rAMZN",
+       "2.42",
+       "-3.67"
+      ],
+      [
+       "rMSFT",
+       "1.08",
+       "n/a (1 trade)"
+      ]
+     ]
+    }
+   ],
+   "actions": [
+    {
+     "at": "every",
+     "do": "exit",
+     "target": [
+      "term",
+      "data"
+     ]
+    },
+    {
+     "at": "nvidia",
+     "do": "highlight",
+     "target": "res",
+     "rows": [
+      2
+     ]
+    },
+    {
+     "at": "positive",
+     "do": "dim",
+     "target": [
+      "dash",
+      "p1",
+      "p2",
+      "fc"
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 10,
+   "transition": "push",
+   "elements": [
+    {
+     "id": "code",
+     "kind": "code",
+     "at": "function",
+     "x": 0.9,
+     "y": 1.6,
+     "w": 9,
+     "h": 3.4,
+     "title": "seal/signal.py",
+     "lines": [
+      "if abs(spread) < threshold:",
+      "    return None",
+      "moved_up = spread > 0",
+      "trade_with_move = moved_up if is_event else not moved_up",
+      "return \"long\" if trade_with_move else \"short\""
+     ],
+     "focus": []
+    },
+    {
+     "id": "nm",
+     "kind": "stamp",
+     "at": "model",
+     "x": 10.8,
+     "y": 2.3,
+     "w": 3.6,
+     "h": 1.1,
+     "text": "no model",
+     "tone": "bad"
+    }
+   ],
+   "actions": [
+    {
+     "at": "function",
+     "do": "focus",
+     "target": [
+      "code"
+     ]
+    },
+    {
+     "at": "does",
+     "do": "highlight",
+     "target": "code",
+     "lines": [
+      4
+     ]
+    }
+   ]
+  },
+  {
+   "beat": 11,
+   "elements": [
+    {
+     "id": "pub",
+     "kind": "box",
+     "at": "replay",
+     "x": 0.9,
+     "y": 5.7,
+     "w": 5,
+     "h": 1.3,
+     "label": "Public",
+     "sub": "rules, costs, backtest",
+     "icon": "globe",
+     "tone": "ok"
+    },
+    {
+     "id": "hid",
+     "kind": "box",
+     "at": "size",
+     "x": 6.6,
+     "y": 5.7,
+     "w": 5.8,
+     "h": 1.3,
+     "label": "Sealed",
+     "sub": "residual size, clip count, jitter",
+     "icon": "lock",
+     "tone": "accent"
+    }
+   ],
+   "actions": [
+    {
+     "at": "anyone",
+     "do": "reset"
+    },
+    {
+     "at": "rule",
+     "do": "check",
+     "target": "pub"
+    },
+    {
+     "at": "sealed",
+     "do": "pulse",
+     "target": "hid"
+    }
+   ]
+  }
+ ]
+}

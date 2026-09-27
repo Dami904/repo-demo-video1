@@ -1,0 +1,1578 @@
+{
+  "repository": "ahmedkhaleel2004/gitdiagram",
+  "createdAt": "2026-09-27T08:05:16.939Z",
+  "meta": {
+    "owner": "ahmedkhaleel2004",
+    "repo": "gitdiagram",
+    "url": "https://github.com/ahmedkhaleel2004/gitdiagram",
+    "description": "Free, simple, fast interactive diagrams and explainer videos for any GitHub repository",
+    "stars": 17079,
+    "language": "TypeScript"
+  },
+  "timing": {
+    "DURATION": 52.3,
+    "SPEECH_END": 48.651,
+    "beats": [
+      {
+        "start": 0.4,
+        "end": 4.58,
+        "words": [
+          {
+            "w": "a",
+            "s": 0.4,
+            "e": 0.493
+          },
+          {
+            "w": "new",
+            "s": 0.586,
+            "e": 0.737
+          },
+          {
+            "w": "repository",
+            "s": 0.806,
+            "e": 1.596
+          },
+          {
+            "w": "hundreds",
+            "s": 1.712,
+            "e": 2.095
+          },
+          {
+            "w": "of",
+            "s": 2.13,
+            "e": 2.188
+          },
+          {
+            "w": "files",
+            "s": 2.246,
+            "e": 2.722
+          },
+          {
+            "w": "and",
+            "s": 2.78,
+            "e": 2.931
+          },
+          {
+            "w": "no",
+            "s": 3.001,
+            "e": 3.117
+          },
+          {
+            "w": "idea",
+            "s": 3.186,
+            "e": 3.442
+          },
+          {
+            "w": "where",
+            "s": 3.488,
+            "e": 3.651
+          },
+          {
+            "w": "anything",
+            "s": 3.686,
+            "e": 3.999
+          },
+          {
+            "w": "lives",
+            "s": 4.069,
+            "e": 4.58
+          }
+        ]
+      },
+      {
+        "start": 5.021,
+        "end": 8.086,
+        "words": [
+          {
+            "w": "so",
+            "s": 5.021,
+            "e": 5.148
+          },
+          {
+            "w": "you",
+            "s": 5.218,
+            "e": 5.299
+          },
+          {
+            "w": "change",
+            "s": 5.357,
+            "e": 5.671
+          },
+          {
+            "w": "one",
+            "s": 5.729,
+            "e": 5.915
+          },
+          {
+            "w": "word",
+            "s": 5.961,
+            "e": 6.437
+          },
+          {
+            "w": "hub",
+            "s": 6.53,
+            "e": 6.762
+          },
+          {
+            "w": "becomes",
+            "s": 6.844,
+            "e": 7.227
+          },
+          {
+            "w": "diagram",
+            "s": 7.285,
+            "e": 8.086
+          }
+        ]
+      },
+      {
+        "start": 8.899,
+        "end": 11.522,
+        "words": [
+          {
+            "w": "gitdiagram",
+            "s": 8.899,
+            "e": 9.723
+          },
+          {
+            "w": "reads",
+            "s": 9.792,
+            "e": 10.036
+          },
+          {
+            "w": "the",
+            "s": 10.083,
+            "e": 10.164
+          },
+          {
+            "w": "code",
+            "s": 10.222,
+            "e": 10.536
+          },
+          {
+            "w": "and",
+            "s": 10.57,
+            "e": 10.663
+          },
+          {
+            "w": "draws",
+            "s": 10.71,
+            "e": 10.953
+          },
+          {
+            "w": "a",
+            "s": 10.988,
+            "e": 11.023
+          },
+          {
+            "w": "map",
+            "s": 11.081,
+            "e": 11.522
+          }
+        ]
+      },
+      {
+        "start": 11.697,
+        "end": 14.947,
+        "words": [
+          {
+            "w": "every",
+            "s": 11.697,
+            "e": 11.964
+          },
+          {
+            "w": "box",
+            "s": 12.022,
+            "e": 12.3
+          },
+          {
+            "w": "linked",
+            "s": 12.416,
+            "e": 12.695
+          },
+          {
+            "w": "straight",
+            "s": 12.753,
+            "e": 13.078
+          },
+          {
+            "w": "to",
+            "s": 13.136,
+            "e": 13.229
+          },
+          {
+            "w": "its",
+            "s": 13.31,
+            "e": 13.415
+          },
+          {
+            "w": "real",
+            "s": 13.473,
+            "e": 13.682
+          },
+          {
+            "w": "folder",
+            "s": 13.763,
+            "e": 14.111
+          },
+          {
+            "w": "or",
+            "s": 14.193,
+            "e": 14.32
+          },
+          {
+            "w": "file",
+            "s": 14.402,
+            "e": 14.947
+          }
+        ]
+      },
+      {
+        "start": 15.272,
+        "end": 19.057,
+        "words": [
+          {
+            "w": "private",
+            "s": 15.272,
+            "e": 15.655
+          },
+          {
+            "w": "repos",
+            "s": 15.702,
+            "e": 16.073
+          },
+          {
+            "w": "work",
+            "s": 16.131,
+            "e": 16.375
+          },
+          {
+            "w": "too",
+            "s": 16.433,
+            "e": 16.851
+          },
+          {
+            "w": "and",
+            "s": 16.921,
+            "e": 17.072
+          },
+          {
+            "w": "any",
+            "s": 17.142,
+            "e": 17.304
+          },
+          {
+            "w": "map",
+            "s": 17.374,
+            "e": 17.594
+          },
+          {
+            "w": "exports",
+            "s": 17.687,
+            "e": 18.21
+          },
+          {
+            "w": "as",
+            "s": 18.245,
+            "e": 18.314
+          },
+          {
+            "w": "a",
+            "s": 18.361,
+            "e": 18.395
+          },
+          {
+            "w": "picture",
+            "s": 18.442,
+            "e": 19.057
+          }
+        ]
+      },
+      {
+        "start": 19.87,
+        "end": 22.053,
+        "words": [
+          {
+            "w": "rather",
+            "s": 19.87,
+            "e": 20.172
+          },
+          {
+            "w": "watch",
+            "s": 20.241,
+            "e": 20.775
+          },
+          {
+            "w": "press",
+            "s": 21.217,
+            "e": 21.495
+          },
+          {
+            "w": "video",
+            "s": 21.553,
+            "e": 22.053
+          }
+        ]
+      },
+      {
+        "start": 22.076,
+        "end": 24.909,
+        "words": [
+          {
+            "w": "and",
+            "s": 22.076,
+            "e": 22.215
+          },
+          {
+            "w": "a",
+            "s": 22.273,
+            "e": 22.296
+          },
+          {
+            "w": "narrator",
+            "s": 22.366,
+            "e": 22.784
+          },
+          {
+            "w": "explains",
+            "s": 22.842,
+            "e": 23.341
+          },
+          {
+            "w": "the",
+            "s": 23.399,
+            "e": 23.469
+          },
+          {
+            "w": "project",
+            "s": 23.515,
+            "e": 23.899
+          },
+          {
+            "w": "in",
+            "s": 23.945,
+            "e": 24.015
+          },
+          {
+            "w": "about",
+            "s": 24.061,
+            "e": 24.305
+          },
+          {
+            "w": "a",
+            "s": 24.351,
+            "e": 24.375
+          },
+          {
+            "w": "minute",
+            "s": 24.433,
+            "e": 24.909
+          }
+        ]
+      },
+      {
+        "start": 25.083,
+        "end": 27.126,
+        "words": [
+          {
+            "w": "ready",
+            "s": 25.083,
+            "e": 25.303
+          },
+          {
+            "w": "to",
+            "s": 25.361,
+            "e": 25.419
+          },
+          {
+            "w": "download",
+            "s": 25.489,
+            "e": 25.954
+          },
+          {
+            "w": "as",
+            "s": 26,
+            "e": 26.081
+          },
+          {
+            "w": "a",
+            "s": 26.116,
+            "e": 26.151
+          },
+          {
+            "w": "vertical",
+            "s": 26.197,
+            "e": 26.604
+          },
+          {
+            "w": "clip",
+            "s": 26.662,
+            "e": 27.126
+          }
+        ]
+      },
+      {
+        "start": 27.823,
+        "end": 32.095,
+        "words": [
+          {
+            "w": "underneath",
+            "s": 27.823,
+            "e": 28.426
+          },
+          {
+            "w": "the",
+            "s": 28.508,
+            "e": 28.612
+          },
+          {
+            "w": "server",
+            "s": 28.67,
+            "e": 28.984
+          },
+          {
+            "w": "fetches",
+            "s": 29.042,
+            "e": 29.39
+          },
+          {
+            "w": "the",
+            "s": 29.46,
+            "e": 29.529
+          },
+          {
+            "w": "tree",
+            "s": 29.587,
+            "e": 30.075
+          },
+          {
+            "w": "the",
+            "s": 30.191,
+            "e": 30.296
+          },
+          {
+            "w": "readme",
+            "s": 30.365,
+            "e": 30.725
+          },
+          {
+            "w": "and",
+            "s": 30.76,
+            "e": 30.865
+          },
+          {
+            "w": "key",
+            "s": 30.934,
+            "e": 31.12
+          },
+          {
+            "w": "source",
+            "s": 31.19,
+            "e": 31.468
+          },
+          {
+            "w": "files",
+            "s": 31.515,
+            "e": 32.095
+          }
+        ]
+      },
+      {
+        "start": 32.269,
+        "end": 35.509,
+        "words": [
+          {
+            "w": "and",
+            "s": 32.269,
+            "e": 32.432
+          },
+          {
+            "w": "one",
+            "s": 32.525,
+            "e": 32.722
+          },
+          {
+            "w": "model",
+            "s": 32.769,
+            "e": 33.036
+          },
+          {
+            "w": "call",
+            "s": 33.117,
+            "e": 33.396
+          },
+          {
+            "w": "returns",
+            "s": 33.488,
+            "e": 33.895
+          },
+          {
+            "w": "an",
+            "s": 33.93,
+            "e": 33.988
+          },
+          {
+            "w": "overview",
+            "s": 34.069,
+            "e": 34.568
+          },
+          {
+            "w": "and",
+            "s": 34.649,
+            "e": 34.777
+          },
+          {
+            "w": "a",
+            "s": 34.835,
+            "e": 34.858
+          },
+          {
+            "w": "graph",
+            "s": 34.905,
+            "e": 35.509
+          }
+        ]
+      },
+      {
+        "start": 35.95,
+        "end": 38.55,
+        "words": [
+          {
+            "w": "but",
+            "s": 35.95,
+            "e": 36.101
+          },
+          {
+            "w": "the",
+            "s": 36.124,
+            "e": 36.194
+          },
+          {
+            "w": "model",
+            "s": 36.24,
+            "e": 36.53
+          },
+          {
+            "w": "never",
+            "s": 36.6,
+            "e": 36.809
+          },
+          {
+            "w": "draws",
+            "s": 36.867,
+            "e": 37.215
+          },
+          {
+            "w": "the",
+            "s": 37.273,
+            "e": 37.343
+          },
+          {
+            "w": "diagram",
+            "s": 37.389,
+            "e": 37.842
+          },
+          {
+            "w": "itself",
+            "s": 37.889,
+            "e": 38.55
+          }
+        ]
+      },
+      {
+        "start": 39.154,
+        "end": 42.358,
+        "words": [
+          {
+            "w": "every",
+            "s": 39.154,
+            "e": 39.468
+          },
+          {
+            "w": "path",
+            "s": 39.537,
+            "e": 39.851
+          },
+          {
+            "w": "in",
+            "s": 39.897,
+            "e": 39.955
+          },
+          {
+            "w": "its",
+            "s": 40.002,
+            "e": 40.129
+          },
+          {
+            "w": "graph",
+            "s": 40.187,
+            "e": 40.547
+          },
+          {
+            "w": "is",
+            "s": 40.605,
+            "e": 40.698
+          },
+          {
+            "w": "checked",
+            "s": 40.756,
+            "e": 41.07
+          },
+          {
+            "w": "against",
+            "s": 41.105,
+            "e": 41.395
+          },
+          {
+            "w": "the",
+            "s": 41.441,
+            "e": 41.511
+          },
+          {
+            "w": "real",
+            "s": 41.581,
+            "e": 41.801
+          },
+          {
+            "w": "tree",
+            "s": 41.859,
+            "e": 42.358
+          }
+        ]
+      },
+      {
+        "start": 42.684,
+        "end": 45.226,
+        "words": [
+          {
+            "w": "then",
+            "s": 42.684,
+            "e": 42.904
+          },
+          {
+            "w": "plain",
+            "s": 42.985,
+            "e": 43.264
+          },
+          {
+            "w": "code",
+            "s": 43.357,
+            "e": 43.694
+          },
+          {
+            "w": "compiles",
+            "s": 43.74,
+            "e": 44.251
+          },
+          {
+            "w": "it",
+            "s": 44.309,
+            "e": 44.39
+          },
+          {
+            "w": "to",
+            "s": 44.425,
+            "e": 44.483
+          },
+          {
+            "w": "mermaid",
+            "s": 44.564,
+            "e": 45.226
+          }
+        ]
+      },
+      {
+        "start": 45.47,
+        "end": 48.651,
+        "words": [
+          {
+            "w": "so",
+            "s": 45.47,
+            "e": 45.586
+          },
+          {
+            "w": "every",
+            "s": 45.667,
+            "e": 45.888
+          },
+          {
+            "w": "box",
+            "s": 45.946,
+            "e": 46.201
+          },
+          {
+            "w": "you",
+            "s": 46.259,
+            "e": 46.352
+          },
+          {
+            "w": "click",
+            "s": 46.422,
+            "e": 46.712
+          },
+          {
+            "w": "lands",
+            "s": 46.886,
+            "e": 47.246
+          },
+          {
+            "w": "where",
+            "s": 47.27,
+            "e": 47.432
+          },
+          {
+            "w": "the",
+            "s": 47.455,
+            "e": 47.525
+          },
+          {
+            "w": "code",
+            "s": 47.571,
+            "e": 47.873
+          },
+          {
+            "w": "lives",
+            "s": 47.92,
+            "e": 48.651
+          }
+        ]
+      }
+    ]
+  },
+  "voices": [
+    {
+      "start": 0.4
+    }
+  ],
+  "version": 2,
+  "plan": {
+    "title": "GitDiagram: code as a map",
+    "outro": "Every box leads to real code.",
+    "beats": [
+      {
+        "scene": "1",
+        "narration": "A new repository... hundreds of files, and no idea where anything lives.",
+        "transition": "cut",
+        "elements": [
+          {
+            "id": "win",
+            "kind": "browser",
+            "at": "",
+            "x": 1,
+            "y": 1.3,
+            "w": 14,
+            "h": 7.1,
+            "url": "github.com/ahmedkhaleel2004/gitdiagram"
+          },
+          {
+            "id": "ft",
+            "kind": "tree",
+            "at": "repository",
+            "x": 1.5,
+            "y": 2.3,
+            "w": 5.6,
+            "h": 5.6,
+            "paths": [
+              "src/app/api/generate/stream/route.ts",
+              "src/app/api/video/render/route.ts",
+              "src/components/mermaid-diagram.tsx",
+              "src/features/diagram/graph.ts",
+              "src/hooks/useDiagram.ts",
+              "src/server/generate/graph-planner.ts",
+              "src/server/generate/repository-context.ts",
+              "src/server/storage/r2.ts",
+              "src/server/explainer/director.ts",
+              "public/video-engine/stage.js"
+            ],
+            "focus": []
+          },
+          {
+            "id": "cnt",
+            "kind": "chip",
+            "at": "hundreds",
+            "x": 8.2,
+            "y": 3,
+            "w": 3,
+            "h": 0.6,
+            "text": "560 files",
+            "tone": "soft"
+          },
+          {
+            "id": "lost",
+            "kind": "text",
+            "at": "idea",
+            "x": 8.2,
+            "y": 4.1,
+            "w": 6.4,
+            "h": 1.2,
+            "text": "where does anything live?",
+            "size": "l",
+            "tone": "muted",
+            "mono": false
+          }
+        ],
+        "actions": [
+          {
+            "do": "scan",
+            "at": "files",
+            "target": [
+              "ft"
+            ]
+          },
+          {
+            "do": "shake",
+            "at": "idea",
+            "target": [
+              "ft"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "1",
+        "narration": "So you change one word, hub becomes diagram.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "pic",
+            "kind": "image",
+            "at": "diagram",
+            "x": 7.5,
+            "y": 2.3,
+            "w": 7.6,
+            "h": 5.4,
+            "src": "img1",
+            "fit": "contain"
+          }
+        ],
+        "actions": [
+          {
+            "do": "exit",
+            "at": "change",
+            "target": [
+              "cnt",
+              "lost"
+            ]
+          },
+          {
+            "do": "replace",
+            "at": "becomes",
+            "target": [
+              "win"
+            ],
+            "text": "gitdiagram.com/ahmedkhaleel2004/gitdiagram"
+          },
+          {
+            "do": "dim",
+            "at": "diagram",
+            "target": [
+              "ft"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "2",
+        "narration": "GitDiagram reads the code and draws a map,",
+        "transition": "push",
+        "elements": [
+          {
+            "id": "fe",
+            "kind": "box",
+            "at": "reads",
+            "x": 1.2,
+            "y": 2.2,
+            "w": 3.8,
+            "h": 1.2,
+            "label": "Frontend",
+            "sub": "src/app",
+            "icon": "browser",
+            "tone": "plain"
+          },
+          {
+            "id": "api",
+            "kind": "box",
+            "at": "draws",
+            "x": 6.1,
+            "y": 2.2,
+            "w": 3.8,
+            "h": 1.2,
+            "label": "Generate API",
+            "sub": "src/app/api/generate",
+            "icon": "server",
+            "tone": "plain"
+          },
+          {
+            "id": "ai",
+            "kind": "box",
+            "at": "map",
+            "x": 11,
+            "y": 2.2,
+            "w": 3.8,
+            "h": 1.2,
+            "label": "Graph planner",
+            "sub": "src/server/generate",
+            "icon": "cpu",
+            "tone": "accent"
+          },
+          {
+            "id": "st",
+            "kind": "box",
+            "at": "map",
+            "x": 6.1,
+            "y": 4.4,
+            "w": 3.8,
+            "h": 1.2,
+            "label": "Storage",
+            "sub": "src/server/storage",
+            "icon": "database",
+            "tone": "plain"
+          },
+          {
+            "id": "a1",
+            "kind": "arrow",
+            "at": "draws",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "fe",
+            "to": "api",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          },
+          {
+            "id": "a2",
+            "kind": "arrow",
+            "at": "map",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "api",
+            "to": "ai",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          },
+          {
+            "id": "a3",
+            "kind": "arrow",
+            "at": "map",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "api",
+            "to": "st",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          }
+        ],
+        "actions": []
+      },
+      {
+        "scene": "2",
+        "narration": "every box linked straight to its real folder or file.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "lk",
+            "kind": "file",
+            "at": "folder",
+            "x": 10.2,
+            "y": 4.5,
+            "w": 4.9,
+            "h": 0.9,
+            "path": "src/server/generate/graph-planner.ts"
+          },
+          {
+            "id": "a4",
+            "kind": "arrow",
+            "at": "linked",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "ai",
+            "to": "lk",
+            "label": "click",
+            "dashed": true,
+            "flow": false
+          }
+        ],
+        "actions": [
+          {
+            "do": "pulse",
+            "at": "box",
+            "target": [
+              "ai"
+            ]
+          },
+          {
+            "do": "highlight",
+            "at": "file",
+            "target": [
+              "lk"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "2",
+        "narration": "Private repos work too, and any map exports as a picture.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "pv",
+            "kind": "box",
+            "at": "private",
+            "x": 1.2,
+            "y": 6.6,
+            "w": 4.2,
+            "h": 1.2,
+            "label": "Private repos",
+            "sub": "with your GitHub token",
+            "icon": "lock",
+            "tone": "soft"
+          },
+          {
+            "id": "ex",
+            "kind": "box",
+            "at": "exports",
+            "x": 10.6,
+            "y": 6.6,
+            "w": 4.2,
+            "h": 1.2,
+            "label": "Export",
+            "sub": "PNG or Mermaid source",
+            "icon": "package",
+            "tone": "soft"
+          }
+        ],
+        "actions": [
+          {
+            "do": "check",
+            "at": "too",
+            "target": [
+              "pv"
+            ]
+          },
+          {
+            "do": "pulse",
+            "at": "picture",
+            "target": [
+              "ex"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "3",
+        "narration": "Rather watch? Press video,",
+        "transition": "zoom",
+        "elements": [
+          {
+            "id": "br",
+            "kind": "browser",
+            "at": "",
+            "x": 1,
+            "y": 1.3,
+            "w": 14,
+            "h": 7.1,
+            "url": "gitdiagram.com/ahmedkhaleel2004/gitdiagram/video"
+          },
+          {
+            "id": "hd",
+            "kind": "heading",
+            "at": "watch",
+            "x": 1.8,
+            "y": 2.4,
+            "w": 8.6,
+            "h": 1.4,
+            "text": "GitDiagram, *explained*"
+          },
+          {
+            "id": "vb",
+            "kind": "chip",
+            "at": "press",
+            "x": 11.6,
+            "y": 2.8,
+            "w": 2.6,
+            "h": 0.7,
+            "text": "▶ Video",
+            "tone": "accent"
+          }
+        ],
+        "actions": [
+          {
+            "do": "focus",
+            "at": "press",
+            "target": [
+              "vb"
+            ]
+          },
+          {
+            "do": "pulse",
+            "at": "video",
+            "target": [
+              "vb"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "3",
+        "narration": "and a narrator explains the project in about a minute,",
+        "transition": "",
+        "elements": [
+          {
+            "id": "parts",
+            "kind": "list",
+            "at": "explains",
+            "x": 1.8,
+            "y": 4.5,
+            "w": 7.6,
+            "h": 2.6,
+            "items": [
+              "What it's for",
+              "How the parts fit",
+              "One decision under the hood"
+            ]
+          },
+          {
+            "id": "len",
+            "kind": "number",
+            "at": "minute",
+            "x": 10.4,
+            "y": 4.1,
+            "w": 4,
+            "h": 2,
+            "value": 1,
+            "prefix": "",
+            "suffix": "min",
+            "label": "narrated, with captions"
+          }
+        ],
+        "actions": [
+          {
+            "do": "reset",
+            "at": "narrator",
+            "target": []
+          }
+        ]
+      },
+      {
+        "scene": "3",
+        "narration": "ready to download as a vertical clip.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "m1",
+            "kind": "chip",
+            "at": "download",
+            "x": 10.1,
+            "y": 6.6,
+            "w": 2.2,
+            "h": 0.6,
+            "text": "MP4 · 16:9",
+            "tone": "soft"
+          },
+          {
+            "id": "m2",
+            "kind": "chip",
+            "at": "vertical",
+            "x": 12.6,
+            "y": 6.6,
+            "w": 2.2,
+            "h": 0.6,
+            "text": "MP4 · 9:16",
+            "tone": "accent"
+          }
+        ],
+        "actions": [
+          {
+            "do": "pulse",
+            "at": "clip",
+            "target": [
+              "m2"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "4",
+        "narration": "Underneath, the server fetches the tree, the README and key source files,",
+        "transition": "slide",
+        "elements": [
+          {
+            "id": "gh",
+            "kind": "box",
+            "at": "fetches",
+            "x": 0.9,
+            "y": 3.6,
+            "w": 3.6,
+            "h": 1.2,
+            "label": "GitHub",
+            "sub": "public or private",
+            "icon": "globe",
+            "tone": "plain"
+          },
+          {
+            "id": "sv",
+            "kind": "box",
+            "at": "server",
+            "x": 5.6,
+            "y": 3.6,
+            "w": 4,
+            "h": 1.2,
+            "label": "Stream route",
+            "sub": "api/generate/stream",
+            "icon": "server",
+            "tone": "accent"
+          },
+          {
+            "id": "f1",
+            "kind": "arrow",
+            "at": "fetches",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "gh",
+            "to": "sv",
+            "label": "",
+            "dashed": false,
+            "flow": true
+          },
+          {
+            "id": "t1",
+            "kind": "chip",
+            "at": "tree",
+            "x": 0.9,
+            "y": 2.2,
+            "w": 2.2,
+            "h": 0.6,
+            "text": "file tree",
+            "tone": "soft"
+          },
+          {
+            "id": "t2",
+            "kind": "chip",
+            "at": "readme",
+            "x": 3.4,
+            "y": 2.2,
+            "w": 2,
+            "h": 0.6,
+            "text": "README",
+            "tone": "soft"
+          },
+          {
+            "id": "t3",
+            "kind": "chip",
+            "at": "source",
+            "x": 5.7,
+            "y": 2.2,
+            "w": 3.2,
+            "h": 0.6,
+            "text": "source excerpts",
+            "tone": "soft"
+          }
+        ],
+        "actions": []
+      },
+      {
+        "scene": "4",
+        "narration": "and one model call returns an overview and a graph.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "md",
+            "kind": "box",
+            "at": "model",
+            "x": 11,
+            "y": 3.6,
+            "w": 4,
+            "h": 1.2,
+            "label": "One model call",
+            "sub": "streamed",
+            "icon": "cpu",
+            "tone": "plain"
+          },
+          {
+            "id": "f2",
+            "kind": "arrow",
+            "at": "call",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "sv",
+            "to": "md",
+            "label": "",
+            "dashed": false,
+            "flow": true
+          },
+          {
+            "id": "ov",
+            "kind": "box",
+            "at": "overview",
+            "x": 7.6,
+            "y": 6.3,
+            "w": 3.4,
+            "h": 1.1,
+            "label": "Overview",
+            "sub": "short explanation",
+            "icon": "file",
+            "tone": "soft"
+          },
+          {
+            "id": "gr",
+            "kind": "box",
+            "at": "graph",
+            "x": 11.6,
+            "y": 6.3,
+            "w": 3.4,
+            "h": 1.1,
+            "label": "Graph",
+            "sub": "groups, nodes, edges",
+            "icon": "gear",
+            "tone": "accent"
+          },
+          {
+            "id": "f3",
+            "kind": "arrow",
+            "at": "overview",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "md",
+            "to": "ov",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          },
+          {
+            "id": "f4",
+            "kind": "arrow",
+            "at": "graph",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "md",
+            "to": "gr",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          }
+        ],
+        "actions": [
+          {
+            "do": "pulse",
+            "at": "graph",
+            "target": [
+              "gr"
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "5",
+        "narration": "But the model never draws the diagram itself.",
+        "transition": "push",
+        "elements": [
+          {
+            "id": "g",
+            "kind": "box",
+            "at": "model",
+            "x": 0.9,
+            "y": 2.2,
+            "w": 3.8,
+            "h": 1.2,
+            "label": "Model's graph",
+            "sub": "nodes with paths",
+            "icon": "gear",
+            "tone": "plain"
+          },
+          {
+            "id": "nd",
+            "kind": "stamp",
+            "at": "never",
+            "x": 0.9,
+            "y": 3.9,
+            "w": 3.4,
+            "h": 0.9,
+            "text": "not a drawing",
+            "tone": "bad"
+          }
+        ],
+        "actions": []
+      },
+      {
+        "scene": "5",
+        "narration": "Every path in its graph is checked against the real tree,",
+        "transition": "",
+        "elements": [
+          {
+            "id": "code",
+            "kind": "code",
+            "at": "path",
+            "x": 5.3,
+            "y": 1.8,
+            "w": 9.8,
+            "h": 3.2,
+            "title": "src/server/generate/graph.ts",
+            "lines": [
+              "if (node.path && !fileTreeLookup.has(node.path)) {",
+              "  issues.push(",
+              "    buildIssue(",
+              "      \"missing_repository_path\",",
+              "      `Path \"${node.path}\" does not exist in the repository file tree.`,",
+              "…"
+            ],
+            "focus": []
+          },
+          {
+            "id": "c1",
+            "kind": "arrow",
+            "at": "checked",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "g",
+            "to": "code",
+            "label": "",
+            "dashed": false,
+            "flow": false
+          }
+        ],
+        "actions": [
+          {
+            "do": "focus",
+            "at": "checked",
+            "target": [
+              "code"
+            ]
+          },
+          {
+            "do": "highlight",
+            "at": "tree",
+            "target": [
+              "code"
+            ],
+            "lines": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "scene": "5",
+        "narration": "then plain code compiles it to Mermaid,",
+        "transition": "",
+        "elements": [
+          {
+            "id": "cp",
+            "kind": "chip",
+            "at": "plain",
+            "x": 0.9,
+            "y": 6.8,
+            "w": 3.9,
+            "h": 0.6,
+            "text": "deterministic compiler",
+            "tone": "soft"
+          },
+          {
+            "id": "mm",
+            "kind": "box",
+            "at": "mermaid",
+            "x": 5.3,
+            "y": 6.5,
+            "w": 4.2,
+            "h": 1.2,
+            "label": "Mermaid",
+            "sub": "src/server/generate/mermaid.ts",
+            "icon": "file",
+            "tone": "accent"
+          },
+          {
+            "id": "c2",
+            "kind": "arrow",
+            "at": "compiles",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "code",
+            "to": "mm",
+            "label": "",
+            "dashed": false,
+            "flow": true
+          }
+        ],
+        "actions": [
+          {
+            "do": "reset",
+            "at": "plain",
+            "target": []
+          }
+        ]
+      },
+      {
+        "scene": "5",
+        "narration": "so every box you click lands where the code lives.",
+        "transition": "",
+        "elements": [
+          {
+            "id": "fl",
+            "kind": "file",
+            "at": "code",
+            "x": 10.2,
+            "y": 6.65,
+            "w": 4.9,
+            "h": 0.9,
+            "path": "src/server/generate/graph.ts"
+          },
+          {
+            "id": "c3",
+            "kind": "arrow",
+            "at": "click",
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0,
+            "from": "mm",
+            "to": "fl",
+            "label": "click",
+            "dashed": true,
+            "flow": false
+          }
+        ],
+        "actions": [
+          {
+            "do": "pulse",
+            "at": "box",
+            "target": [
+              "mm"
+            ]
+          },
+          {
+            "do": "check",
+            "at": "lives",
+            "target": [
+              "fl"
+            ]
+          }
+        ]
+      }
+    ],
+    "images": {
+      "img1": "/videos/gitdiagram/img1.png"
+    }
+  }
+}

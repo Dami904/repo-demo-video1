@@ -1,0 +1,77 @@
+{
+  "title": "GitDiagram: code as a map",
+  "outro": "Every box leads to real code.",
+  "story": "A new repository... hundreds of files, and no idea where anything lives. So you change one word, hub becomes diagram. GitDiagram reads the code and draws a map, every box linked straight to its real folder or file. Private repos work too, and any map exports as a picture. Rather watch? Press video, and a narrator explains the project in about a minute, ready to download as a vertical clip. Underneath, the server fetches the tree, the README and key source files, and one model call returns an overview and a graph. But the model never draws the diagram itself. Every path in its graph is checked against the real tree, then plain code compiles it to Mermaid, so every box you click lands where the code lives.",
+  "beats": [
+    {
+      "scene": "1",
+      "narration": "A new repository... hundreds of files, and no idea where anything lives.",
+      "brief": "A GitHub browser window on the repo; its file tree fills the left side and gets scanned; a file count chip and a muted question 'where does anything live?' appear on the right."
+    },
+    {
+      "scene": "1",
+      "narration": "So you change one word, hub becomes diagram.",
+      "brief": "The question and chip leave; the URL swaps from github.com to gitdiagram.com on 'becomes'; img1 (the GitDiagram front page) lands big on the right on 'diagram'."
+    },
+    {
+      "scene": "2",
+      "narration": "GitDiagram reads the code and draws a map,",
+      "brief": "An architecture map builds: Frontend, Generate API, Graph planner and Storage boxes with arrows between them."
+    },
+    {
+      "scene": "2",
+      "narration": "every box linked straight to its real folder or file.",
+      "brief": "The Graph planner box pulses; a dashed 'click' arrow runs to a file card for src/server/generate/graph-planner.ts, which lights up on 'real'."
+    },
+    {
+      "scene": "2",
+      "narration": "Private repos work too, and any map exports as a picture.",
+      "brief": "Along the bottom: a 'Private repos' box with a lock gets a check; an 'Export' box (PNG or Mermaid) pulses on 'picture'."
+    },
+    {
+      "scene": "3",
+      "narration": "Rather watch? Press video,",
+      "brief": "A browser on the /video page; a big serif heading; the camera pushes into a 'Video' chip, which pulses on 'video'."
+    },
+    {
+      "scene": "3",
+      "narration": "and a narrator explains the project in about a minute,",
+      "brief": "Camera pulls back; a list of the film's three parts appears; a big number rolls to one minute."
+    },
+    {
+      "scene": "3",
+      "narration": "ready to download as a vertical clip.",
+      "brief": "Two MP4 chips (16:9 and 9:16) pop in under the number; the vertical one is accent."
+    },
+    {
+      "scene": "4",
+      "narration": "Underneath, the server fetches the tree, the README and key source files,",
+      "brief": "GitHub box on the left, the stream route box in the middle, packets flowing between; three chips (file tree, README, source excerpts) appear above on their words."
+    },
+    {
+      "scene": "4",
+      "narration": "and one model call returns an overview and a graph.",
+      "brief": "A model box on the right joins with a flowing arrow; it fans out into an Overview box and a Graph box in the lower half."
+    },
+    {
+      "scene": "5",
+      "narration": "But the model never draws the diagram itself.",
+      "brief": "The model's graph as a box on the left; a 'not a drawing' stamp slams under it on 'never'."
+    },
+    {
+      "scene": "5",
+      "narration": "Every path in its graph is checked against the real tree,",
+      "brief": "The real code from src/server/generate/graph.ts types in on the right; the camera pushes in and the path check line lights on 'tree'."
+    },
+    {
+      "scene": "5",
+      "narration": "then plain code compiles it to Mermaid,",
+      "brief": "Camera resets; a 'deterministic compiler' chip and a Mermaid box appear below, with packets flowing from the code into it."
+    },
+    {
+      "scene": "5",
+      "narration": "so every box you click lands where the code lives.",
+      "brief": "A 'click' arrow runs from the Mermaid box to a real file card, which gets a check on 'lives'."
+    }
+  ]
+}

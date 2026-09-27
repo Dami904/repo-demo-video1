@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "owner": "Dami904",
+    "repo": "seal",
+    "url": "https://github.com/Dami904/seal",
+    "description": "Trade Bitget rTokens when US cash stocks are closed. Publish the rule. Seal the size.",
+    "stars": 0,
+    "language": "Python"
+  },
+  "sourceFiles": [
+    "seal/signal.py",
+    "seal/execution.py",
+    "configs/default.yaml",
+    "backend/src/forecast.ts"
+  ],
+  "theme": {
+    "colors": {
+      "paper": "#171717",
+      "paper2": "#0e0e0e",
+      "card": "#0e0e0e",
+      "ink": "#fafafa",
+      "ink2": "#a1a1a1",
+      "line": "#404040",
+      "shadow": "#000000",
+      "accent": "#3987e5",
+      "accentSoft": "#1b3350",
+      "accentDeep": "#5aa2f0",
+      "ok": "#4ade80",
+      "okSoft": "#133a24",
+      "bad": "#ff6467",
+      "badSoft": "#3d1618",
+      "glow": "#3987e5",
+      "termBg": "#0a0a0a",
+      "termText": "#fafafa",
+      "termDim": "#a1a1a1",
+      "termLine": "#262626",
+      "termOk": "#4ade80",
+      "captionBg": "rgba(10,10,10,0.92)",
+      "captionText": "#fafafa",
+      "codeString": "#f08a5d",
+      "codeNumber": "#e8b84a"
+    },
+    "fonts": {
+      "sans": "DM Sans",
+      "mono": "Geist Mono",
+      "display": "DM Sans"
+    }
+  }
+}
