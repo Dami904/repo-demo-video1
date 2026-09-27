@@ -80,6 +80,7 @@ const MIN_SIZE: Record<Exclude<ShotKind, "arrow">, [number, number]> = {
   list: [3, 1.2],
   svg: [1.5, 1.5],
   image: [3, 2],
+  video: [4, 2.5],
 };
 
 // The canvas an element may occupy: the top band (y < 0.95) belongs to the
@@ -286,6 +287,29 @@ function normalizeElement(
       element.src = text(raw.src);
       element.fit = text(raw.fit) === "cover" ? "cover" : "contain";
       break;
+    case "video": {
+      // A screen recording stored with the film (npm run capture).
+      if (!facts.videos?.includes(text(raw.src))) {
+        warnings.push(`dropped unknown recording ${text(raw.src)} (${where})`);
+        return null;
+      }
+      element.src = text(raw.src);
+      element.fit = text(raw.fit) === "contain" ? "contain" : "cover";
+      // Where in the recording to start (seconds; negative holds the first
+      // frame that long, to line a click up with its word) and how fast to play it.
+      element.from = clamp(number(raw.from, 0), -10, 600);
+      element.rate = clamp(number(raw.rate, 1), 0.25, 4);
+      // Line a recorded click (its index in <id>.marks.json) up with a word
+      // said in this scene; npm run voice turns it into "from".
+      {
+        const sync = raw.sync && typeof raw.sync === "object" ? (raw.sync as Json) : null;
+        if (sync && text(sync.word)) element.sync = { word: text(sync.word), mark: Math.max(0, Math.floor(number(sync.mark, 0))) };
+        // A second click and word set the playback rate between them.
+        const end = raw.syncEnd && typeof raw.syncEnd === "object" ? (raw.syncEnd as Json) : null;
+        if (element.sync && end && text(end.word)) element.syncEnd = { word: text(end.word), mark: Math.max(0, Math.floor(number(end.mark, 0))) };
+      }
+      break;
+    }
     case "svg":
       element.viewBox = /^[\d.\s-]+$/.test(text(raw.viewBox))
         ? text(raw.viewBox)

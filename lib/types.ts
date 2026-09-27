@@ -27,6 +27,7 @@ export const SHOT_KINDS = [
   "svg",
   "image",
   "arrow",
+  "video",
 ] as const;
 export type ShotKind = (typeof SHOT_KINDS)[number];
 
@@ -141,6 +142,8 @@ export interface ShotPlan {
   beats: ShotBeat[];
   /** README pictures by id: same-origin paths to the copies stored with the film. */
   images?: Record<string, string>;
+  /** Screen recordings (npm run capture): id -> same-origin path. */
+  videos?: Record<string, string>;
 }
 
 export interface VideoMeta {

@@ -45,7 +45,19 @@ interface Cue {
   rate?: number;
 }
 
-type StageWindow = Window & { __renderSeek: (time: number) => void };
+type StageWindow = Window & {
+  __renderSeek: (time: number) => void;
+  __mediaSettled?: () => Promise<unknown>;
+};
+
+/** Seek the stage and wait until every screen recording shows its frame. */
+async function seekStage(page: Page, time: number) {
+  await page.evaluate(async (t) => {
+    const stage = window as unknown as StageWindow;
+    stage.__renderSeek(t);
+    await stage.__mediaSettled?.();
+  }, time);
+}
 
 async function openStage(browser: Browser, origin: string): Promise<{ page: Page; sfx: Cue[] }> {
   const page = await browser.newPage();
@@ -134,7 +146,7 @@ async function captureSegment(
   );
   const closed = once(encoder, "close");
   for (let index = from; index < to; index++) {
-    await page.evaluate((time) => (window as unknown as StageWindow).__renderSeek(time), index / FPS);
+    await seekStage(page, index / FPS);
     const jpeg = await page.screenshot({ type: "jpeg", quality: 92, optimizeForSpeed: true });
     if (!encoder.stdin.write(jpeg)) await once(encoder.stdin, "drain");
     progress(1);
@@ -197,7 +209,7 @@ try {
       const stillDir = join(outDir, `stills-${format}`);
       mkdirSync(stillDir, { recursive: true });
       for (const [index, beat] of artifact.timing.beats.entries()) {
-        await page.evaluate((time) => (window as unknown as StageWindow).__renderSeek(time), beat.end - 0.05);
+        await seekStage(page, beat.start + (beat.end - beat.start) * 0.7);
         await page.screenshot({ path: join(stillDir, `beat-${String(index).padStart(2, "0")}.jpg`) as `${string}.jpg`, type: "jpeg", quality: 80 });
       }
       console.log(`Wrote ${artifact.timing.beats.length} stills to ${stillDir}`);

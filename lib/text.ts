@@ -54,6 +54,8 @@ export interface PlanRepositoryFacts {
   sourceText: string;
   /** Ids of the README pictures stored with the film (plan.images). */
   images?: string[];
+  /** Ids of the screen recordings stored with the film (plan.videos). */
+  videos?: string[];
   /**
    * All the repository material the writers read (README, tree, sources,
    * description); on-screen web addresses must appear in it. Defaults to

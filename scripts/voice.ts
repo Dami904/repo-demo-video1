@@ -7,6 +7,7 @@
 // transcription step is needed. The take is cached in tts.json and only
 // re-recorded when the narration changes, to save characters.
 import "dotenv/config";
+import { execFileSync } from "node:child_process";
 import { existsSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { normalizeWord } from "../lib/text";
@@ -18,7 +19,10 @@ const LEAD_IN_SECONDS = 0.4;
 const TAIL_SECONDS = 3.6;
 
 const name = process.argv[2];
-if (!name) throw new Error("Usage: npm run voice -- <film>");
+if (!name) throw new Error("Usage: npm run voice -- <film> [--dry]");
+// --dry: no ElevenLabs call. Words are timed at an even speaking pace over
+// silence, so layouts can be checked (render --stills) before paying for a take.
+const dry = process.argv.includes("--dry");
 const dir = filmDir(name);
 const film = readJson(join(dir, "film.json"));
 const plan: ShotPlan = readJson(join(dir, "plan.json"));
@@ -54,7 +58,27 @@ const voice = process.env.ELEVENLABS_VOICE_ID || "JBFqnCBsd6RMkjVDRZzb";
 const model = process.env.ELEVENLABS_MODEL || "eleven_multilingual_v2";
 const cachePath = join(dir, "tts.json");
 let take: Take | null = existsSync(cachePath) ? readJson(cachePath) : null;
-if (!take || take.text !== text || take.voice !== voice || take.model !== model) {
+if (dry) {
+  const perChar = 0.066; // about 2.5 words a second
+  const characters = [...text];
+  const starts = characters.map((_, i) => Number((i * perChar).toFixed(3)));
+  const seconds = characters.length * perChar;
+  const silence = execFileSync(
+    process.env.FFMPEG_PATH || "ffmpeg",
+    ["-loglevel", "error", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono", "-t", seconds.toFixed(2), "-c:a", "libmp3lame", "-f", "mp3", "pipe:1"],
+    { maxBuffer: 64 * 2 ** 20 },
+  );
+  take = {
+    text, voice: "dry", model: "dry",
+    audio_base64: silence.toString("base64"),
+    alignment: {
+      characters,
+      character_start_times_seconds: starts,
+      character_end_times_seconds: starts.map((t) => Number((t + perChar).toFixed(3))),
+    },
+  };
+  console.log("Dry run: estimated timings over silence (no ElevenLabs call).");
+} else if (!take || take.text !== text || take.voice !== voice || take.model !== model) {
   const key = process.env.ELEVENLABS_API_KEY;
   if (!key) throw new Error("Set ELEVENLABS_API_KEY in .env");
   console.log(`Recording ${text.length} characters with ElevenLabs...`);
@@ -130,6 +154,50 @@ const timing: VideoTiming = {
   SPEECH_END: seconds(speechEnd),
   beats,
 };
+
+// Recordings with a sync request start where the named click lands on the
+// named word: from = click time + reaction - (word time - cue time) * rate.
+const REACTION_SECONDS = 0.35; // the page updates a moment after the click
+function wordTime(fromBeat: number, word: string): number | null {
+  const want = normalizeWord(word);
+  const scene = plan.beats[fromBeat]!.scene;
+  for (let b = fromBeat; b < plan.beats.length && plan.beats[b]!.scene === scene; b++) {
+    const said = beats[b]!.words;
+    const exact = said.find((w) => w.w === want);
+    if (exact) return exact.s;
+    const stem = said.find((w) => (want.length > 3 && w.w.startsWith(want)) || (w.w.length > 3 && want.startsWith(w.w)));
+    if (stem) return stem.s;
+  }
+  return null;
+}
+plan.beats.forEach((beat, index) => {
+  for (const element of beat.elements) {
+    const sync = element.sync as { word: string; mark: number } | undefined;
+    if (element.kind !== "video" || !sync) continue;
+    const marksPath = join(dir, `${element.src}.marks.json`);
+    const marks: number[] = existsSync(marksPath) ? readJson(marksPath) : [];
+    const click = marks[sync.mark];
+    const cue = (element.at ? wordTime(index, String(element.at)) : null) ?? beats[index]!.start;
+    const said = wordTime(index, sync.word);
+    if (click === undefined || said === null) {
+      console.warn(`! Cannot sync ${element.id}: ${click === undefined ? `no click ${sync.mark} in ${element.src}.marks.json` : `"${sync.word}" not said in its scene`}`);
+      continue;
+    }
+    let rate = Number(element.rate) || 1;
+    const end = element.syncEnd as { word: string; mark: number } | undefined;
+    if (end) {
+      const endClick = marks[end.mark];
+      const endSaid = wordTime(index, end.word);
+      if (endClick !== undefined && endSaid !== null && endSaid > said && endClick > click) {
+        rate = Number(Math.min(4, Math.max(0.25, (endClick - click) / (endSaid - said))).toFixed(3));
+        element.rate = rate;
+        console.log(`${element.id}: click ${end.mark} lands on "${end.word}" (plays at ${rate}x)`);
+      } else console.warn(`! Cannot sync the end of ${element.id}`);
+    }
+    element.from = Number((click + REACTION_SECONDS - (said - cue) * rate).toFixed(3));
+    console.log(`${element.id}: click ${sync.mark} lands on "${sync.word}" (starts at ${element.from}s of ${element.src})`);
+  }
+});
 
 const artifact = {
   repository: `${film.meta.owner}/${film.meta.repo}`,

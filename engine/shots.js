@@ -507,6 +507,78 @@ function build() {
       },
     };
   };
+  // A screen recording of the real product (npm run capture), stored with the
+  // film: plan.videos maps its id to a same-origin path. It starts on its cue
+  // and follows the film clock; window.__syncMedia keeps it there.
+  var MEDIA = [];
+  B.video = function (e, layer) {
+    var src = String(own(S.videos || {}, e.src) || "");
+    if (!/^\/(?![\/\\])/.test(src)) return null;
+    var el = place(layer, e, cardStyle("var(--card)"));
+    var v = h("video", "", "position:absolute;inset:0;width:100%;height:100%;object-fit:" + (e.fit === "contain" ? "contain" : "cover") + ";object-position:top center;background:var(--card)", el);
+    v.muted = true;
+    v.playsInline = true;
+    v.preload = "auto";
+    v.src = src;
+    var clip = { v: v, t0: null, from: Number(e.from) || 0, rate: Number(e.rate) || 1 };
+    MEDIA.push(clip);
+    return {
+      el: el,
+      enter: function (t) {
+        clip.t0 = t;
+        riseIn(el, t, { y: 40, d: 0.5 });
+        sfx("whoosh", t, -20, 1);
+      },
+    };
+  };
+  // Where each recording should be at film time t. Exact (MP4 renders):
+  // seek every clip and remember the pending seeks for __mediaSettled.
+  // Live (preview): let clips play, and only correct drift.
+  var pendingSeeks = [];
+  var lastLiveSync = 0;
+  function clipTime(c, t) {
+    var local = c.from + Math.max(0, t - c.t0) * c.rate;
+    var end = isFinite(c.v.duration) ? c.v.duration - 0.04 : local;
+    return Math.max(0, Math.min(local, end));
+  }
+  window.__syncMedia = function (t, exact) {
+    MEDIA.forEach(function (c) {
+      if (c.t0 === null) return;
+      var want = clipTime(c, t);
+      if (exact) {
+        c.v.pause();
+        if (Math.abs(c.v.currentTime - want) < 0.001) return;
+        pendingSeeks.push(new Promise(function (done) {
+          c.v.addEventListener("seeked", function () { done(); }, { once: true });
+          setTimeout(done, 3000);
+        }));
+        c.v.currentTime = want;
+        return;
+      }
+      lastLiveSync = performance.now();
+      var inRange = t >= c.t0 && t - c.t0 < 600;
+      if (!inRange) {
+        if (!c.v.paused) c.v.pause();
+        if (Math.abs(c.v.currentTime - want) > 0.05) c.v.currentTime = want;
+        return;
+      }
+      c.v.playbackRate = c.rate;
+      if (Math.abs(c.v.currentTime - want) > 0.3) c.v.currentTime = want;
+      if (c.v.paused && want < clipTime(c, Infinity)) c.v.play().catch(function () {});
+    });
+  };
+  // Resolves once every seek asked for so far has landed on its frame.
+  window.__mediaSettled = function () {
+    var waiting = pendingSeeks;
+    pendingSeeks = [];
+    return Promise.all(waiting);
+  };
+  // In the live preview, a clock that stops (pause, scrub) stops the clips.
+  if (window.parent !== window)
+    setInterval(function () {
+      if (performance.now() - lastLiveSync > 150)
+        MEDIA.forEach(function (c) { if (!c.v.paused) c.v.pause(); });
+    }, 100);
   // The shapes the server's normalizer allows (src/server/explainer/shots.ts).
   var SHAPES = { path: 1, rect: 1, circle: 1, line: 1, polyline: 1, polygon: 1 };
   B.svg = function (e, layer) {
@@ -987,7 +1059,7 @@ function build() {
 
   // ---------- chrome: repo label, progress hairline, end card ----------
   var label = document.getElementById("brand");
-  label.innerHTML = logo(30) +
+  label.innerHTML =
     '<span class="mono" style="font:600 22px/1 \'Geist Mono\';color:var(--ink)">' + esc(M.owner + "/" + M.repo) + "</span>";
   label.style.cssText += ";gap:12px;padding:8px 16px;border-radius:999px;background:rgba(@@paper.rgb@@,0.92);border:2px solid rgba(@@ink.rgb@@,0.12);z-index:20";
   riseIn(label, 0.2, { y: -14, d: 0.5 });
@@ -1004,15 +1076,26 @@ function build() {
   var endW = F.w - 2 * endPad;
   var endInner = h("div", "inner", "display:flex;flex-direction:column;justify-content:center;padding:0 " + endPad + "px" + (tall ? ";top:" + F.TOP + "px;bottom:" + (F.h - F.BOT) + "px" : ""), end);
   var outro = S.outro || S.title;
-  var os = fitSize(outro.replace(/\*/g, ""), function (s) { return "400 " + s + 'px "Instrument Serif"'; }, endW, tall ? 620 : 420, 1.02, tall ? 132 : 150, tall ? 52 : 60);
+  // The project's logo (film.json theme.logo) leads the closing line, as tall as
+  // its capitals; the line is fitted to the width the logo leaves.
+  var logoSrc = String((M || {}).logo || "");
+  var hasLogo = /^\/(?![\/\\])/.test(logoSrc);
+  var os = fitSize(outro.replace(/\*/g, ""), function (s) { return "400 " + s + 'px "Instrument Serif"'; }, hasLogo ? endW * 0.86 : endW, tall ? 620 : 420, 1.02, tall ? 132 : 150, tall ? 52 : 60);
   var line = h("div", "serif", "font-size:" + os + "px;line-height:1.02;letter-spacing:-0.02em;max-width:" + endW + "px", endInner);
+  var endLogo = null;
+  if (hasLogo) {
+    endLogo = h("img", "", "height:0.74em;width:auto;display:inline-block;vertical-align:baseline;margin-right:0.24em;border-radius:0.16em", line);
+    endLogo.src = logoSrc;
+    endLogo.alt = "";
+  }
   var words = accentWords(outro).map(function (w) {
     var sp = h("span", "hw", "", line, w);
     line.appendChild(document.createTextNode(" "));
     return sp;
   });
-  var sign = h("div", "", "margin-top:56px;display:flex;flex-wrap:wrap;align-items:center;gap:18px", endInner, logo(40) + '<span class="mono" style="font:600 28px/1 \'Geist Mono\'">github.com/' + esc(M.owner + "/" + M.repo) + '</span>');
+  var sign = h("div", "", "margin-top:56px;display:flex;flex-wrap:wrap;align-items:center;gap:18px", endInner, '<span class="mono" style="font:600 28px/1 \'Geist Mono\'">github.com/' + esc(M.owner + "/" + M.repo) + '</span>');
   tl.set(end, { visibility: "visible" }, endAt);
+  if (endLogo) tl.fromTo(endLogo, { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, endAt + 0.02);
   words.forEach(function (sp, k) { tl.fromTo(sp, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, endAt + 0.1 + k * 0.06); });
   riseIn(sign, endAt + 0.5, { y: 20, d: 0.5 });
 

@@ -9,7 +9,7 @@
 //   shots.json  the designer's shots:  { shots: [{ beat, transition?, elements, actions }] }
 //   source/     a clone of the repository (for the path and code checks)
 import { execFileSync } from "node:child_process";
-import { copyFileSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, existsSync, readFileSync, writeFileSync } from "node:fs";
 import { extname } from "node:path";
 import { join } from "node:path";
 import { normalizeScript, scriptWordCount } from "../lib/script";
@@ -45,7 +45,12 @@ const words = scriptWordCount(script);
 console.log(
   `Script: ${script.beats.length} beats, ${new Set(script.beats.map((b) => b.scene)).size} scenes, ${words} words.`,
 );
-if (words < 110 || words > 140) console.warn(`! Aim for 110-130 words (have ${words}).`);
+// The narrator ("George") says about 2.55 words a second, pauses included;
+// film.json "seconds" sets the target (default 60).
+const targetSeconds = Number(film.seconds) || 60;
+const target = Math.round(targetSeconds * 2.55);
+if (words < target * 0.85 || words > target * 1.12)
+  console.warn(`! Aim for about ${target} words for ${targetSeconds}s (have ${words}).`);
 
 const designed = new Map<number, Record<string, unknown>>();
 for (const shot of rawShots.shots as Array<Record<string, unknown>>)
@@ -59,13 +64,24 @@ for (const [id, path] of Object.entries((film.images ?? {}) as Record<string, st
   images[id] = `/videos/${name}/${file}`;
 }
 
+// Screen recordings made by `npm run capture` (captures.json), served from the film folder.
+const videos: Record<string, string> = {};
+const capturesPath = join(dir, "captures.json");
+if (existsSync(capturesPath))
+  for (const clip of readJson(capturesPath).clips as Array<{ id: string }>) {
+    if (existsSync(join(dir, `${clip.id}.mp4`))) videos[clip.id] = `/videos/${name}/${clip.id}.mp4`;
+    else console.warn(`! Recording "${clip.id}" not captured yet (npm run capture -- ${name}).`);
+  }
+
 const { plan, warnings } = normalizeShots(script, designed, {
   name: film.meta.repo,
   paths,
   sourceText,
   material,
   images: Object.keys(images),
+  videos: Object.keys(videos),
 });
+if (Object.keys(videos).length) plan.videos = videos;
 if (Object.keys(images).length) plan.images = images;
 for (const warning of warnings) console.warn(`! ${warning}`);
 writeFileSync(join(dir, "plan.json"), JSON.stringify(plan, null, 2));

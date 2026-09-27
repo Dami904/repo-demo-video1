@@ -142,7 +142,8 @@
     var title = el("div", "vtitle", top, String((window.SPEC || {}).title || meta.repo || ""));
     // Largest size at which the title fits on one line; ellipsis only as a last resort.
     for (var size = 124; size > 64 && title.scrollWidth > title.clientWidth; size -= 4) title.style.fontSize = size + "px";
-    el("div", "vsub", top, "explained in about a minute");
+    var minutes = Math.round(((window.TIMING || {}).DURATION || 60) / 60);
+    el("div", "vsub", top, minutes <= 1 ? "explained in about a minute" : "explained in about " + ["", "", "two", "three", "four", "five"][Math.min(minutes, 5)] + " minutes");
     var captionHost = el("div", "vcaptions");
     el("div", "vfoot", null, "github.com/" + (meta.owner || "") + "/" + (meta.repo || ""));
     return captionHost;
@@ -234,10 +235,14 @@
     window.addEventListener("resize", fit);
   }
 
+  // MP4 renders seek recordings exactly and wait for them (__mediaSettled);
+  // the live player lets them play.
+  var rendering = false;
   function seek(time) {
     var t = Math.max(0, Math.min(Number(time) || 0, timeline.duration()));
     timeline.seek(t);
     updateCaptions(t);
+    if (window.__syncMedia) window.__syncMedia(t, rendering);
   }
 
   function waitForTimeline(options) {
@@ -270,6 +275,7 @@
 
   function whenImagesReady(done) {
     var images = Array.prototype.slice.call(document.querySelectorAll("#scenes img"));
+    var videos = Array.prototype.slice.call(document.querySelectorAll("#scenes video"));
     var settled = false;
     var timer = null;
     function finish() {
@@ -278,13 +284,21 @@
       clearTimeout(timer);
       done();
     }
-    if (!images.length) return finish();
+    if (!images.length && !videos.length) return finish();
     timer = setTimeout(finish, IMAGE_WAIT_MS);
     Promise.all(
       images.map(function (img) {
         // decode() waits for the load too; a broken picture only rejects.
         return (typeof img.decode === "function" ? img.decode() : Promise.resolve()).catch(function () {});
-      }),
+      }).concat(
+        videos.map(function (video) {
+          if (video.readyState >= 2) return Promise.resolve();
+          return new Promise(function (done) {
+            video.addEventListener("loadeddata", done, { once: true });
+            video.addEventListener("error", done, { once: true });
+          });
+        }),
+      ),
     ).then(finish);
   }
 
@@ -313,7 +327,10 @@
       // Offline renders (MP4s, posters) run in software on machines without a
       // GPU: skip the full-frame noise layer, which would re-blend every frame
       // and is invisible after video compression anyway.
-      if (message.render) document.documentElement.classList.add("render");
+      if (message.render) {
+        document.documentElement.classList.add("render");
+        rendering = true;
+      }
       waitForTimeline({
         captions: Boolean(message.captions),
         layout: message.layout === "vertical" ? "vertical" : "landscape",
