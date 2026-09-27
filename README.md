@@ -4,10 +4,17 @@ Narrated explainer videos for GitHub repositories, each styled in the
 repository's own colours, fonts and logo, voiced by ElevenLabs.
 
 The animation engine and scene validator are adapted from
-[GitDiagram](https://github.com/ahmedkhaleel2004/gitdiagram) (MIT; its
-licence is kept in `LICENSE-gitdiagram`, as the MIT licence requires). The
-films themselves carry no GitDiagram branding. Claude Code writes each
-film's script and scenes in a chat session.
+[GitDiagram](https://github.com/ahmedkhaleel2004/gitdiagram). The films
+themselves carry no GitDiagram branding. Claude Code writes each film's script
+and scenes in a chat session.
+
+## License
+
+MIT, copyright 2026 Dami904 ([LICENSE](LICENSE)). The engine (`engine/`) and
+the validator (`lib/shots.ts`, `lib/script.ts`, `lib/text.ts`, `lib/types.ts`,
+`lib/engine.ts`) are adapted from GitDiagram, MIT, copyright 2024 Ahmed Khaleel;
+its notice is kept in [LICENSE-gitdiagram](LICENSE-gitdiagram), as the MIT
+licence requires.
 
 ## Setup
 
